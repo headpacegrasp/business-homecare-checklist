@@ -1,768 +1,599 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comfort Keepers Franchise Launch Checklist (Annapolis, MD)</title>
-    <style>
-        /* Base Styles */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            background-color: #f8f9fa;
-            color: #212529;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 15px;
-        }
-        h1, h2 {
-            text-align: center;
-            color: #004d9c; /* Comfort Keepers Primary Blue */
-        }
-        h1 {
-            border-bottom: 2px solid #ffcc00; /* CK Yellow accent */
-            padding-bottom: 10px;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 5px;
-            font-weight: 300;
-        }
-        .header-box {
-            background-color: #e9ecef;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        /* Progress Bar */
-        .progress-container {
-            width: 80%;
-            margin: 10px auto 20px;
-            background-color: #dee2e6;
-            border-radius: 4px;
-            height: 25px;
-            overflow: hidden;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background-color: #28a745; /* Green for progress */
-            transition: width 0.4s ease-in-out;
-            text-align: right;
-            line-height: 25px;
-            color: white;
-            font-weight: 600;
-            padding-right: 10px;
-            box-sizing: border-box;
-        }
-        /* Accordion (Phase) Styles */
-        .phase-card {
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .phase-header {
-            padding: 15px;
-            cursor: pointer;
-            background-color: #004d9c;
-            color: white;
-            border-radius: 6px 6px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-        .phase-header:hover {
-            background-color: #003a73;
-        }
-        .phase-body {
-            padding: 15px;
-        }
-        .phase-title {
-            margin-left: 10px;
-        }
-        /* Sub-Phase Styles */
-        .sub-phase-header {
-            background-color: #f1f1f1;
-            padding: 10px 15px;
-            margin-top: 10px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border-left: 5px solid #ffcc00;
-        }
-        /* Checklist Table Styles */
-        .checklist-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        .checklist-table th, .checklist-table td {
-            padding: 12px 8px;
-            border: 1px solid #e9ecef;
-            vertical-align: top;
-            font-size: 0.9rem;
-        }
-        .checklist-table th {
-            background-color: #f8f8f8;
-            text-align: left;
-            font-weight: 700;
-            color: #343a40;
-        }
-        .checklist-table td:first-child {
-            width: 30px; /* Checkbox column */
-            text-align: center;
-        }
-        .checklist-table .item-title {
-            font-weight: 600;
-        }
-        .summary-text {
-            color: #6c757d;
-            font-size: 0.85rem;
-            margin-top: 5px;
-            display: block;
-        }
-        .cost-col {
-            min-width: 120px;
-        }
-        .completed-row {
-            background-color: #f0fff4 !important; /* Light success color */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CK Annapolis — Franchise Launch Tracker</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0B1829;--navy2:#0D2137;--navy3:#0F1F33;--navy4:#132A44;--navy5:#1A3049;
+  --gold:#C8A951;--gold-dim:#8B7B3A;--green:#1B6B3A;--green-bright:#2D9F56;
+  --red:#C53030;--orange:#D4870E;--gray:#6B7F94;--gray-light:#8FA3B8;
+  --text:#E8ECF1;--text-dim:#4A6072;
+}
+body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;background:var(--navy);color:var(--text);display:flex;height:100vh;overflow:hidden}
 
-        /* Checkbox Styles */
-        input[type="checkbox"] {
-            transform: scale(1.3);
-            cursor: pointer;
-            accent-color: #ffcc00;
-        }
+/* SIDEBAR */
+.sidebar{width:260px;min-width:260px;background:linear-gradient(180deg,var(--navy2),var(--navy));border-right:1px solid var(--navy5);display:flex;flex-direction:column;overflow:hidden}
+.sidebar-brand{padding:20px 16px 12px;border-bottom:1px solid var(--navy5)}
+.brand-row{display:flex;align-items:center;gap:10px}
+.brand-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--green),var(--green-bright));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff}
+.brand-name{font-size:14px;font-weight:700;color:var(--gold);letter-spacing:.5px}
+.brand-sub{font-size:11px;color:var(--gray)}
+.sidebar-progress{margin-top:12px;background:var(--navy4);border-radius:6px;padding:8px 10px;font-size:11px;color:var(--gray)}
+.sidebar-progress .row{display:flex;justify-content:space-between;margin-bottom:4px}
+.sidebar-progress .pct{color:var(--gold);font-weight:600}
+.bar-track{height:4px;background:var(--navy5);border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;border-radius:2px;transition:width .4s}
+.bar-fill-gold{background:linear-gradient(90deg,var(--green),var(--green-bright))}
+.sidebar-progress .stats{display:flex;justify-content:space-between;margin-top:4px;font-size:10px}
+.sidebar-progress .stats .blocked{color:var(--orange)}
+.sidebar-nav{flex:1;overflow-y:auto;padding:8px 0}
+.nav-btn{width:100%;padding:10px 16px;background:transparent;border:none;color:var(--gray-light);cursor:pointer;text-align:left;font-size:12px;font-family:inherit;border-left:3px solid transparent;display:flex;flex-direction:column;gap:3px;transition:all .15s}
+.nav-btn:hover{background:rgba(200,169,81,.05)}
+.nav-btn.active{background:rgba(200,169,81,.1);color:var(--gold);border-left-color:var(--gold);font-weight:600}
+.nav-btn .nav-row{display:flex;align-items:center;gap:6px}
+.nav-btn .nav-row .icon{font-size:14px}
+.nav-btn .nav-row .label{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-btn .mini-bar{display:flex;align-items:center;gap:6px;padding-left:22px}
+.nav-btn .mini-bar .bar-track{flex:1;height:3px}
+.nav-btn .mini-bar .count{font-size:10px;color:var(--gray);min-width:28px;text-align:right}
+.sidebar-footer{padding:12px 16px;border-top:1px solid var(--navy5);font-size:10px;color:var(--text-dim);text-align:center}
+.sidebar-footer span{color:var(--gold);font-weight:600}
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .checklist-table, .checklist-table tbody, .checklist-table tr, .checklist-table td {
-                display: block;
-                width: 100%;
-            }
-            .checklist-table th {
-                display: none; /* Hide table headers */
-            }
-            .checklist-table tr {
-                margin-bottom: 15px;
-                border: 1px solid #dee2e6;
-                display: block;
-                padding: 10px;
-            }
-            .checklist-table td {
-                text-align: left;
-                padding: 5px 0;
-                border: none;
-            }
-            .checklist-table td:before {
-                content: attr(data-label);
-                font-weight: bold;
-                margin-right: 10px;
-                display: inline-block;
-                width: 100px;
-            }
-            .checklist-table td:first-child {
-                text-align: left;
-            }
-        }
-    </style>
+/* MAIN */
+.main{flex:1;overflow-y:auto;background:var(--navy3)}
+.main-inner{padding:28px 32px;max-width:1200px}
+
+/* DASHBOARD */
+h1.page-title{font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:4px}
+.page-sub{font-size:13px;color:var(--gray);margin-bottom:24px}
+.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:28px}
+.kpi-card{border-radius:10px;padding:16px 18px;border:1px solid transparent}
+.kpi-card .kpi-label{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.kpi-card .kpi-value{font-size:30px;font-weight:700;line-height:1}
+.overall-box{background:var(--navy4);border-radius:12px;padding:20px 24px;margin-bottom:28px;border:1px solid var(--navy5)}
+.overall-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.overall-header .title{font-size:15px;font-weight:600}
+.overall-header .sub{font-size:12px;color:var(--gray);margin-left:10px}
+.overall-header .big-pct{font-size:28px;font-weight:700;color:var(--gold)}
+.overall-bar{height:10px;background:var(--navy);border-radius:5px;overflow:hidden;margin-bottom:16px}
+.overall-bar .fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-bright),var(--gold));border-radius:5px;transition:width .5s}
+.phase-mini-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}
+.phase-mini{cursor:pointer;background:transparent;border:none;text-align:left;padding:0;font-family:inherit}
+.phase-mini .pm-label{font-size:10px;color:var(--gray);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phase-mini .pm-pct{font-size:10px;margin-top:2px}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px}
+.alert-box{border-radius:12px;padding:18px 20px}
+.alert-box h3{margin:0 0 12px;font-size:14px;font-weight:600}
+.alert-box .empty{font-size:12px;color:var(--gray)}
+.alert-list{display:flex;flex-direction:column;gap:8px;max-height:240px;overflow-y:auto}
+.alert-item{border-radius:6px;padding:8px 10px;font-size:12px}
+.alert-item .ai-title{font-weight:600;margin-bottom:2px}
+.alert-item .ai-sub{font-size:11px;opacity:.7}
+
+.vendor-box{background:var(--navy4);border-radius:12px;padding:20px 24px;border:1px solid var(--navy5)}
+.vendor-box h3{margin:0 0 14px;font-size:15px;font-weight:600}
+.vendor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.vendor-card{border-radius:8px;padding:12px 14px;border:1px solid var(--navy5)}
+.vendor-card .vc-name{font-size:13px;font-weight:600}
+.vendor-card .vc-desc{font-size:10px;color:var(--gray);margin-bottom:6px}
+.vendor-card .vc-bar{display:flex;align-items:center;gap:6px}
+.vendor-card .vc-bar .count{font-size:10px;color:var(--gray)}
+
+/* PHASE VIEW */
+.phase-controls{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.phase-controls input,.phase-controls select{padding:8px 12px;background:var(--navy4);border:1px solid var(--navy5);border-radius:6px;color:var(--text);font-size:12px;font-family:inherit;outline:none}
+.phase-controls input{width:220px}
+.phase-controls select{cursor:pointer}
+.phase-progress{display:flex;align-items:center;gap:10px;margin:8px 0 20px}
+.phase-progress .bar-track{flex:1;max-width:300px;height:6px;border-radius:3px}
+.phase-progress .pp-label{font-size:12px;color:var(--gold);font-weight:600}
+
+.sub-header{width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--navy4);border:1px solid var(--navy5);cursor:pointer;color:var(--text);font-family:inherit;font-size:14px;font-weight:600;margin-bottom:0;transition:border-radius .2s}
+.sub-header.open{border-radius:8px 8px 0 0}
+.sub-header.closed{border-radius:8px;margin-bottom:12px}
+.sub-header .sh-left{display:flex;align-items:center;gap:8px}
+.sub-header .sh-bar{width:4px;height:20px;border-radius:2px;background:var(--gold)}
+.sub-header .sh-count{font-size:11px;color:var(--gray);font-weight:400;margin-left:4px}
+.sub-header .sh-arrow{font-size:12px;color:var(--gray);transition:transform .2s}
+.sub-header.open .sh-arrow{transform:rotate(180deg)}
+
+.sub-body{border:1px solid var(--navy5);border-top:none;border-radius:0 0 8px 8px;overflow:hidden;margin-bottom:12px}
+.item-row{padding:14px 16px;border-bottom:1px solid rgba(15,37,64,.6);display:flex;align-items:flex-start;gap:12px;transition:background .2s}
+.item-row:last-child{border-bottom:none}
+.item-row.s-complete{background:rgba(45,159,86,.04)}
+.item-row.s-blocked{background:rgba(197,48,48,.04)}
+
+.status-select{min-width:116px;padding:5px 8px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;outline:none;appearance:none;-webkit-appearance:none;font-family:inherit;border-width:1px;border-style:solid}
+.ss-not_started{background:#F1F3F6;color:#8B95A5;border-color:rgba(139,149,165,.25)}
+.ss-in_progress{background:#FFF8EB;color:#D4870E;border-color:rgba(212,135,14,.25)}
+.ss-complete{background:#EEFBF0;color:#1B7D3A;border-color:rgba(27,125,58,.25)}
+.ss-blocked{background:#FFF0F0;color:#C53030;border-color:rgba(197,48,48,.25)}
+.ss-na{background:#F3F4F6;color:#6B7280;border-color:rgba(107,114,128,.25)}
+
+.item-content{flex:1;min-width:0}
+.item-title{font-size:13px;font-weight:600;line-height:1.3}
+.item-title.done{text-decoration:line-through;color:var(--green-bright)}
+.item-title.na{opacity:.5}
+.item-summary{font-size:11px;color:var(--gray);margin-top:3px;line-height:1.4}
+.item-meta{display:flex;gap:16px;margin-top:6px;font-size:10px;color:var(--text-dim)}
+.item-action{font-size:10px;color:#5A7A94;margin-top:3px}
+.item-action strong{color:#6B8FAA}
+.item-note{margin-top:6px;padding:5px 8px;background:rgba(200,169,81,.06);border:1px solid rgba(200,169,81,.15);border-radius:4px;font-size:11px;color:var(--gold);cursor:pointer}
+.note-edit{margin-top:6px;display:flex;gap:6px}
+.note-edit input{flex:1;padding:5px 8px;background:var(--navy4);border:1px solid rgba(200,169,81,.25);border-radius:4px;font-size:11px;color:var(--gold);outline:none;font-family:inherit}
+.note-edit .btn-save{padding:5px 10px;background:var(--gold);border:none;border-radius:4px;font-size:10px;font-weight:600;color:var(--navy);cursor:pointer;font-family:inherit}
+.note-edit .btn-cancel{padding:5px 10px;background:var(--navy5);border:none;border-radius:4px;font-size:10px;color:var(--gray);cursor:pointer;font-family:inherit}
+.btn-add-note{margin-top:6px;background:none;border:none;padding:0;font-size:10px;color:var(--text-dim);cursor:pointer;text-decoration:underline;font-family:inherit}
+
+@media(max-width:900px){
+  .sidebar{width:200px;min-width:200px}
+  .kpi-grid{grid-template-columns:repeat(3,1fr)}
+  .vendor-grid{grid-template-columns:repeat(2,1fr)}
+  .phase-mini-grid{grid-template-columns:repeat(4,1fr)}
+  .two-col{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  body{flex-direction:column}
+  .sidebar{width:100%;min-width:100%;max-height:50vh}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Comfort Keepers Franchise Launch Checklist</h1>
-            <h2>Annapolis, Maryland Location</h2>
-            <div class="header-box">
-                <p style="margin: 0; font-size: 0.85rem;">
-                    User ID: <code id="user-id">Loading...</code>
-                </p>
-                <p style="margin: 5px 0 0;">
-                    **Target Opening Date:** <strong style="color: #d9534f; font-size: 1.1rem;">May 30, 2026</strong> | Total Actions: <strong id="total-actions">143</strong>
-                </p>
-                <div class="progress-container">
-                    <div id="progress-bar" class="progress-bar">0%</div>
-                </div>
-                <p style="margin: 0; font-size: 1.1rem;">
-                    Completed: <strong id="completed-count">0</strong> / <span id="total-tasks-display">143</span>
-                </p>
-            </div>
-        </header>
+<nav class="sidebar" id="sidebar"></nav>
+<main class="main" id="main"></main>
 
-        <main id="checklist-container">
-            <!-- Loading indicator -->
-            <div id="loading-message" style="text-align: center; padding: 50px; font-size: 1.2rem;">
-                Loading checklist data from local storage...
-            </div>
-            <!-- Checklist will be rendered here by JavaScript -->
-        </main>
-    </div>
+<script>
+// ═══════════════════════════════════════════════════════════════════════
+// DATA — COMPREHENSIVE FRANCHISE LAUNCH TRACKER
+// ═══════════════════════════════════════════════════════════════════════
+const STATUSES = ["not_started","in_progress","complete","blocked","na"];
+const STATUS_META = {
+  not_started:{label:"Not Started",color:"#8B95A5",bg:"#F1F3F6",icon:"○"},
+  in_progress:{label:"In Progress",color:"#D4870E",bg:"#FFF8EB",icon:"◐"},
+  complete:{label:"Complete",color:"#1B7D3A",bg:"#EEFBF0",icon:"●"},
+  blocked:{label:"Blocked",color:"#C53030",bg:"#FFF0F0",icon:"✕"},
+  na:{label:"N/A",color:"#6B7280",bg:"#F3F4F6",icon:"—"}
+};
 
-    <!-- 
-        Firebase imports removed. 
-        This version will use browser localStorage for persistence.
-    -->
-    <script type="module">
-        // --- 1. CHECKLIST DATA (143 Items) ---
-        // Data structure includes all 143 items, summarized and phased.
-        const CHECKLIST_DATA = [
-            // PHASE 1: PRE-OPENING PHASE (Legal, Setup, Training)
-            {
-                phase: "Phase 1: Pre-Opening Phase (Legal, Setup, Training)",
-                sub_phases: [
-                    {
-                        name: "Legal & Business Formation",
-                        items: [
-                            { title: "Register Business Entity", summary: "Establish your business as a legal entity with the state of Maryland. Choose between LLC (limited liability company) or Corporation structure based on your tax and liability preferences. This creates legal separation between personal and business assets.", action: "File articles of organization/incorporation with Maryland Department of Assessments & Taxation", timeline: "Complete 30-45 days before opening", duration: "30-45 days", cost: "$100-300 filing fees" },
-                            { title: "Obtain Federal EIN", summary: "The Employer Identification Number (EIN) is like a Social Security number for your business. Required for hiring employees, opening bank accounts, and filing taxes. Free to obtain directly from IRS.", action: "Apply online at IRS.gov or through your accountant", timeline: "Complete immediately after entity formation", duration: "1-3 days", cost: "Free" },
-                            { title: "Apply for Anne Arundel County Business License", summary: "Local operating permit required to legally conduct business in Anne Arundel County. Ensures compliance with local regulations and zoning requirements.", action: "Submit application to Anne Arundel County Office of Finance", timeline: "2-4 weeks processing time", duration: "14-28 days", cost: "Varies by business type, typically $50-150" },
-                            { title: "Register with Maryland Board of Labor, Industry and Licensing", summary: "State-level registration for employers in Maryland. Covers unemployment insurance, workers' compensation, and labor law compliance.", action: "Complete online registration through Maryland Department of Labor portal", timeline: "Complete before hiring first employee", duration: "N/A (Milestone)", cost: "Registration free; insurance premiums vary" },
-                            { title: "Complete Home Care Agency Registration", summary: "Maryland may require specific licensing for home care agencies. Ensures compliance with health and safety standards for providing in-home care services.", action: "Check requirements with Maryland Office of Health Care Quality (OHCQ)", timeline: "60-90 days processing time", duration: "60-90 days", cost: "$200-500 application fee" },
-                            { title: "Obtain Local Health Department Clearances", summary: "Health department approval ensures your business meets public health standards, particularly important for agencies providing personal care services.", action: "Contact Anne Arundel County Department of Health", timeline: "2-4 weeks", duration: "14-28 days", cost: "Minimal fees" },
-                            { title: "General Liability Insurance", summary: "Protects business from claims of bodily injury, property damage, and personal injury that occur during business operations. Essential coverage for client interactions.", action: "Obtain quotes from commercial insurance brokers (Min $1-2M coverage)", timeline: "Complete before opening", duration: "7-14 days", cost: "$1,500-3,000 annually" },
-                            { title: "Professional Liability Insurance (E&O)", summary: "Also called errors and omissions insurance. Protects against claims of negligence, mistakes, or failure to provide adequate care services.", action: "Work with insurance broker specializing in home care (Min $1-2M coverage)", timeline: "Complete before opening", duration: "7-14 days", cost: "$2,000-4,000 annually" },
-                            { title: "Workers' Compensation Insurance", summary: "Mandatory coverage in Maryland for businesses with employees. Covers medical costs and lost wages if employee injured on job. Protects both employees and business from workplace injury costs.", action: "Obtain policy before hiring first employee", timeline: "Complete before hiring", duration: "7-14 days", cost: "2-5% of payroll, varies by job classification" },
-                            { title: "Commercial Auto Insurance", summary: "Covers vehicles used for business purposes, including owner and employee vehicles used for client visits, errands, or transportation services.", action: "Add commercial auto coverage or hired/non-owned auto policy", timeline: "Complete before opening", duration: "7-14 days", cost: "$1,200-2,500 annually" },
-                            { title: "Employment Practices Liability Insurance (EPLI)", summary: "Protects against claims from employees including wrongful termination, discrimination, harassment, or wage violations. Critical protection for employment-related lawsuits.", action: "Add as endorsement or standalone policy ($500K-1M recommended)", timeline: "Complete before hiring", duration: "7-14 days", cost: "$800-1,500 annually" },
-                            { title: "Cyber Liability Insurance", summary: "Covers data breaches, cyber attacks, and loss of client personal information. Essential as you'll store sensitive client and employee data electronically.", action: "Discuss with insurance broker ($500K-1M recommended)", timeline: "Complete before opening", duration: "7-14 days", cost: "$500-1,000 annually" }
-                        ]
-                    },
-                    {
-                        name: "Franchise Agreement & Training",
-                        items: [
-                            { title: "Sign Franchise Disclosure Document (FDD)", summary: "Legal document required by FTC that discloses all essential information about the franchise opportunity. Must receive 14 days before signing agreement.", action: "Review thoroughly with franchise attorney, sign after 14-day waiting period", timeline: "Allow 2-3 weeks for review", duration: "14-21 days", cost: "Attorney review $500-1,500" },
-                            { title: "Execute Franchise Agreement", summary: "Binding contract between you and Comfort Keepers defining rights, responsibilities, fees, territory, and terms. Typically 10-year term with renewal options.", action: "Sign after FDD review period and legal counsel review", timeline: "After 14-day FDD waiting period", duration: "1 day", cost: "Initial franchise fee $59,950" },
-                            { title: "Complete Item 19 Financial Performance Review", summary: "Item 19 of FDD contains financial performance data from existing franchises. Critical for understanding realistic revenue and profit expectations.", action: "Analyze data, compare to your market and projections", timeline: "During FDD review period", duration: "N/A (Included in review)", cost: "Included in FDD review" },
-                            { title: "Review Territory Rights and Exclusivity Terms", summary: "Understand exact geographic boundaries of your exclusive territory, population demographics, and any restrictions on franchisor or other franchisees operating in your area.", action: "Map out territory, analyze market opportunity within boundaries", timeline: "Before signing franchise agreement", duration: "N/A (Included in review)", cost: "Included in agreement" },
-                            { title: "Complete Corporate Training at Headquarters", summary: "Intensive training program at Comfort Keepers headquarters covering all aspects of franchise operations. Typically 1-2 weeks of classroom and hands-on instruction.", action: "Schedule training immediately after signing agreement", timeline: "1-2 weeks, usually within 30 days of signing", duration: "7-14 days", cost: "Training included; travel expenses $1,500-3,000" },
-                            { title: "Operations Management Training", summary: "Learn day-to-day operations including scheduling, quality assurance, client management, caregiver supervision, and administrative procedures.", action: "Complete all modules and pass assessments", timeline: "Part of initial training program", duration: "N/A (Included in training)", cost: "Included in initial training" },
-                            { title: "Sales and Marketing Fundamentals", summary: "Training on selling home care services, building referral networks, marketing strategies, and converting leads to clients. Learn Comfort Keepers proven sales methods.", action: "Complete training and receive marketing materials", timeline: "Part of initial training program", duration: "N/A (Included in training)", cost: "Included in initial training" },
-                            { title: "Care Coordinator Certification", summary: "Specialized training for conducting client assessments, developing care plans, matching caregivers to clients, and managing ongoing care relationships. Critical role in service quality.", action: "Complete certification program", timeline: "Part of initial training program", duration: "N/A (Included in training)", cost: "Included in initial training" },
-                            { title: "Technology Platform Training", summary: "Comprehensive training on franchise software systems including CRM, scheduling, billing, payroll, and caregiver management. Master the technology that runs daily operations.", action: "Complete all software training modules", timeline: "Part of initial training program", duration: "N/A (Included in training)", cost: "Included; ongoing software fees apply" },
-                            { title: "Compliance and Regulatory Requirements", summary: "Training on federal and state regulations including HIPAA privacy, employment laws, caregiver regulations, documentation requirements, and quality standards.", action: "Complete compliance training and obtain required certifications", timeline: "Part of initial training program", duration: "N/A (Included in training)", cost: "Included in initial training" }
-                        ]
-                    },
-                    {
-                        name: "Office Setup",
-                        items: [
-                            { title: "Secure Office Space in Annapolis", summary: "Professional office location serves as operational hub and meeting space for clients/families. Location should be accessible, professional, and sized for staff of 3-5 initially.", action: "Lease 800-1,200 sq ft office in professional building", timeline: "Secure 60 days before opening", duration: "60 days (Lead time)", cost: "$3,125/month rent budgeted" },
-                            { title: "Verify ADA Compliance", summary: "Ensure office meets Americans with Disabilities Act requirements for accessibility including parking, entrances, restrooms, and common areas. Required by law.", action: "Inspect facility for compliance before signing lease", timeline: "During site selection", duration: "N/A (Included in site selection)", cost: "Included in lease; modifications if needed $2,000-5,000" },
-                            { title: "Ensure Professional Appearance for Client Meetings", summary: "Office should convey professionalism, warmth, and trustworthiness. First impressions critical for families making care decisions. Should include private consultation space.", action: "Select location with professional ambiance, good lighting, and comfortable meeting areas", timeline: "During site selection", duration: "N/A (Included in site selection)", cost: "Included in overall office setup" },
-                            { title: "Install Furniture and Fixtures", summary: "Office furniture including desks, chairs, filing cabinets, reception area seating, and conference table for client meetings. Quality matters for professional image.", action: "Purchase and install furniture per Comfort Keepers standards", timeline: "2-3 weeks before opening", duration: "14-21 days", cost: "$5,000-8,000" },
-                            { title: "Install Signage (Interior and Exterior)", summary: "Branded signage meeting Comfort Keepers standards for visibility and brand consistency. Exterior sign helps clients find office; interior reinforces brand.", action: "Work with approved vendors for brand-compliant signage", timeline: "3-4 weeks before opening (requires permits)", duration: "21-28 days", cost: "$2,000-4,000" },
-                            { title: "Set Up Phone System", summary: "Professional business phone system with main line (410) 224-3849, voicemail, call routing, and ability to forward calls. First point of contact for potential clients.", action: "Install VoIP or traditional business phone system", timeline: "2 weeks before opening", duration: "14 days", cost: "$50-150/month" },
-                            { title: "Install Computer Equipment and Software", summary: "Computers for office staff including owner, desktop computers or laptops, printers, monitors, and necessary software licenses.", action: "Purchase equipment meeting franchise technology requirements", timeline: "2 weeks before opening", duration: "14 days", cost: "$3,000-5,000" },
-                            { title: "Stock Office Supplies and Materials", summary: "Basic office supplies including paper, pens, folders, client forms, caregiver timesheets, first aid supplies, and administrative materials for daily operations.", action: "Purchase supplies from approved vendors", timeline: "1 week before opening", duration: "7 days", cost: "$500-1,000 initial stock" },
-                            { title: "Install Security System", summary: "Protect office, equipment, and confidential client files with alarm system and potentially security cameras. Important for after-hours protection and liability.", action: "Contract with security company for installation and monitoring", timeline: "Before moving in equipment", duration: "N/A (Milestone)", cost: "$500-1,000 installation; $40-80/month monitoring" }
-                        ]
-                    },
-                    {
-                        name: "Technology & Systems",
-                        items: [
-                            { title: "Implement ClearCare Operations Platform", summary: "ClearCare (or current approved platform) is comprehensive software managing scheduling, billing, caregiver tracking, client records, and care plans. Central nervous system of business operations.", action: "Complete setup with franchise support and software vendor", timeline: "2-3 weeks before opening", duration: "14-21 days", cost: "$200-400/month subscription" },
-                            { title: "Set Up Login Credentials for All Users", summary: "Create secure accounts for owner, office staff, care coordinators, and caregivers with appropriate permission levels for data security and HIPAA compliance.", action: "Work with IT support to create user accounts", timeline: "During software implementation", duration: "N/A (Included in setup)", cost: "Included in platform subscription" },
-                            { title: "Complete Data Migration (if applicable)", summary: "If transitioning from another business or system, migrate existing client and caregiver data to new platform. Ensures continuity and data preservation.", action: "Work with software vendor for data import", timeline: "Before go-live date", duration: "N/A (Milestone)", cost: "Included or $500-1,500 for complex migrations" },
-                            { title: "Train Staff on Platform Usage", summary: "Comprehensive training for all users on scheduling caregivers, documenting care visits, running reports, billing, and managing daily operations through software.", action: "Complete training modules and hands-on practice", timeline: "Week before opening and first 2 weeks", duration: "7-21 days", cost: "Included in platform subscription" },
-                            { title: "Set Up Business Phone Line", summary: "Dedicated business line (410) 224-3849 separate from personal phones. Professional appearance and allows call tracking for marketing ROI analysis.", action: "Activate business phone with local area code", timeline: "2 weeks before opening", duration: "14 days", cost: "$50-100/month" },
-                            { title: "Set Up Email Using Comfort Keepers Domain", summary: "Professional email addresses (yourname@comfortkeepers.com format) for brand consistency, credibility, and professional communication with clients and referral sources.", action: "Work with franchise IT support for email setup", timeline: "2 weeks before opening", duration: "14 days", cost: "Included in franchise fees" },
-                            { title: "Configure Website Subdomain", summary: "Your local website (typically annapolis.comfortkeepers.com) provides information about services, allows lead generation, and appears in local search results.", action: "Customize template with local information, photos, and contact details", timeline: "3-4 weeks before opening", duration: "21-28 days", cost: "Included in franchise fees; $100-200/month hosting" },
-                            { title: "Set Up Social Media Business Accounts", summary: "Facebook, Instagram, LinkedIn business pages for local market presence, community engagement, reputation management, and digital marketing campaigns.", action: "Create accounts using business information and branded profile images", timeline: "2-3 weeks before opening", duration: "14-21 days", cost: "Free; advertising budget additional" },
-                            { title: "Order Business Cards (Owner, Staff, Caregivers)", summary: "Professional business cards following Comfort Keepers brand standards for networking, community events, and leave-behinds at referral sources.", action: "Order through approved print vendor", timeline: "3 weeks before opening", duration: "21 days", cost: "$100-200 for initial batch" },
-                            { title: "Order Brochures and Service Guides", summary: "Marketing materials explaining services, pricing, and process for potential clients and referral sources. Key sales tool for converting inquiries.", action: "Order branded materials from franchise-approved vendor", timeline: "3 weeks before opening", duration: "21 days", cost: "$300-500 for initial order" },
-                            { title: "Prepare Client Welcome Packets", summary: "Professional packets given to new clients containing service agreement, client handbook, bill of rights, caregiver profiles, and welcome letter. Sets professional tone.", action: "Assemble packets with all required documents", timeline: "Week before opening", duration: "7 days", cost: "$100-200 for materials" },
-                            { title: "Create Caregiver Recruitment Materials", summary: "Flyers, job descriptions, and marketing materials to attract quality caregivers. Highlights benefits, culture, and opportunities.", action: "Customize templates and print materials", timeline: "3-4 weeks before opening", duration: "21-28 days", cost: "$200-300 for materials" },
-                            { title: "Order Branded Apparel and Name Tags", summary: "Polo shirts, jackets, or scrubs with Comfort Keepers logo for staff and caregivers. Professional appearance builds brand recognition and trust.", action: "Order through approved apparel vendor", timeline: "3-4 weeks before opening", duration: "21-28 days", cost: "$500-1,000 initial order" }
-                        ]
-                    }
-                ]
-            },
+const PHASES = [
+// ─── PHASE 1 ────────────────────────────────────────────────────────
+{id:"p1",phase:"Phase 1 — Pre-Opening",icon:"⚡",sub_phases:[
+{name:"Legal & Business Formation",items:[
+{id:"1-1-1",title:"Register Business Entity (LLC)",summary:"File articles of organization with MD SDAT. Creates legal separation between personal and business assets.",action:"File with Maryland Dept. of Assessments & Taxation",timeline:"30-45 days before opening",cost:"$100-300"},
+{id:"1-1-2",title:"Obtain Federal EIN",summary:"Employer Identification Number — required for hiring, bank accounts, tax filing.",action:"Apply online at IRS.gov",timeline:"Immediately after formation",cost:"Free"},
+{id:"1-1-3",title:"Anne Arundel County Business License",summary:"Local operating permit for Anne Arundel County.",action:"Submit to AA County Office of Finance",timeline:"2-4 weeks",cost:"$50-150"},
+{id:"1-1-4",title:"Register with MD Board of Labor",summary:"State employer registration — unemployment insurance, workers' comp, labor law compliance.",action:"Complete online via MD Dept. of Labor portal",timeline:"Before first hire",cost:"Free"},
+{id:"1-1-5",title:"RSA License Application — OHCQ",summary:"Maryland RSA license under COMAR 10.07.05. $1,000 non-refundable fee every 3 years per COMAR 10.07.05.04A(k).",action:"Submit complete application package to OHCQ with policy manual, business plan, and all supporting documents",timeline:"60-90 days processing",cost:"$1,000 (3-yr)"},
+{id:"1-1-6",title:"RSA Certification — Worker Classification (Health-General 19-4A-11)",summary:"Worker classification / pay practices attestation required at initial licensure and maintained ongoing.",action:"Complete RSA Certification online via OHCQ portal",timeline:"With RSA application",cost:"Included"},
+{id:"1-1-7",title:"NPI Registration (National Provider Identifier)",summary:"10-digit unique identifier for healthcare providers. Required for HIPAA transactions, insurance billing, and provider credentialing even for non-medical home care agencies operating as HIPAA covered entities.",action:"Apply at NPPES (National Plan & Provider Enumeration System) — nppes.cms.hhs.gov. Select Type 2 (Organization) NPI.",timeline:"Before opening / before any insurance billing",cost:"Free"},
+{id:"1-1-8",title:"Local Health Department Clearances",summary:"Anne Arundel County Dept. of Health approval for personal care services.",action:"Contact AA County Health Dept.",timeline:"2-4 weeks",cost:"Minimal"},
+{id:"1-1-9",title:"General Liability Insurance",summary:"Bodily injury / property damage coverage. Min $1-2M.",action:"Obtain quotes from commercial insurance brokers",timeline:"Before opening",cost:"$1,500-3,000/yr"},
+{id:"1-1-10",title:"Professional Liability (E&O) Insurance",summary:"Errors & omissions for negligence claims. Min $1-2M.",action:"Work with home care specialist broker",timeline:"Before opening",cost:"$2,000-4,000/yr"},
+{id:"1-1-11",title:"Workers' Compensation Insurance",summary:"Mandatory MD coverage for all employees. Covers workplace injuries.",action:"Obtain policy before first hire",timeline:"Before first hire",cost:"2-5% of payroll"},
+{id:"1-1-12",title:"Commercial Auto Insurance",summary:"Covers vehicles for business purposes including hired/non-owned auto.",action:"Add commercial auto or HNOA policy",timeline:"Before opening",cost:"$1,200-2,500/yr"},
+{id:"1-1-13",title:"Employment Practices Liability (EPLI)",summary:"Wrongful termination, discrimination, harassment claims.",action:"Add as endorsement or standalone ($500K-1M)",timeline:"Before hiring",cost:"$800-1,500/yr"},
+{id:"1-1-14",title:"Cyber Liability Insurance",summary:"Data breaches, cyber attacks, client PII exposure.",action:"Discuss with broker ($500K-1M)",timeline:"Before opening",cost:"$500-1,000/yr"},
+]},
+{name:"Franchise Agreement & Training",items:[
+{id:"1-2-1",title:"Sign FDD (Franchise Disclosure Document)",summary:"FTC-required legal disclosure. Must receive 14 days before signing agreement.",action:"Review thoroughly with franchise attorney",timeline:"2-3 weeks review",cost:"Attorney $500-1,500"},
+{id:"1-2-2",title:"Execute Franchise Agreement",summary:"Binding contract — territory, fees, responsibilities, 10-year term with renewal.",action:"Sign after FDD 14-day waiting period and legal counsel review",timeline:"After waiting period",cost:"$59,950 franchise fee"},
+{id:"1-2-3",title:"Financial Performance Review",summary:"Analyze financial performance data from existing CK franchises. Critical for realistic revenue/profit expectations.",action:"Analyze data, compare to your market and projections",timeline:"During FDD review",cost:"Included in FDD review"},
+{id:"1-2-4",title:"Review Territory Rights & Exclusivity",summary:"Understand exact geographic boundaries, population demographics, restrictions on other franchisees.",action:"Map territory, analyze market opportunity within boundaries",timeline:"Before signing",cost:"Included"},
+{id:"1-2-5",title:"Complete Corporate Training at HQ",summary:"1-2 weeks intensive at CK headquarters covering all franchise operations.",action:"Schedule within 30 days of signing",timeline:"7-14 days",cost:"Travel $1,500-3,000"},
+{id:"1-2-6",title:"Operations Management Training",summary:"Day-to-day ops: scheduling, QA, client management, caregiver supervision, admin.",action:"Complete all modules and pass assessments",timeline:"Part of HQ training",cost:"Included"},
+{id:"1-2-7",title:"Sales & Marketing Fundamentals",summary:"CK proven sales methods, referral networks, lead conversion, marketing strategy.",action:"Complete training and receive marketing materials",timeline:"Part of HQ training",cost:"Included"},
+{id:"1-2-8",title:"Care Coordinator Certification",summary:"Client assessments, care planning, caregiver-client matching, ongoing care management.",action:"Complete CK certification program",timeline:"Part of HQ training",cost:"Included"},
+{id:"1-2-9",title:"Technology Platform Training (Viv, Viventium, CareAcademy)",summary:"Comprehensive training on franchise software — CRM, scheduling, billing, payroll, caregiver management.",action:"Complete all software training modules",timeline:"Part of HQ training",cost:"Included; ongoing fees apply"},
+{id:"1-2-10",title:"Compliance & Regulatory Training",summary:"HIPAA privacy, employment laws, caregiver regulations, documentation requirements, COMAR.",action:"Complete compliance training and certifications",timeline:"Part of HQ training",cost:"Included"},
+{id:"1-2-11",title:"Interactive Caregiving™ Philosophy Training",summary:"CK's core service philosophy — engaging clients in their own care to improve outcomes. Brand differentiator.",action:"Complete IC training, incorporate into all onboarding and service delivery",timeline:"Part of HQ training",cost:"Included"},
+]},
+{name:"Office Setup",items:[
+{id:"1-3-1",title:"Secure Office Space — Annapolis",summary:"800-1,200 sq ft professional office. Operational hub and client meeting space.",action:"Lease in professional building",timeline:"60 days before opening",cost:"$3,125/month"},
+{id:"1-3-2",title:"Verify ADA Compliance",summary:"Americans with Disabilities Act — parking, entrances, restrooms, common areas.",action:"Inspect facility before signing lease",timeline:"During site selection",cost:"Modifications $2K-5K if needed"},
+{id:"1-3-3",title:"Professional Appearance for Client Meetings",summary:"Office conveys professionalism, warmth, trustworthiness. Private consultation space required.",action:"Select location with good ambiance, lighting, comfortable meeting areas",timeline:"During site selection",cost:"Included in setup"},
+{id:"1-3-4",title:"Install Furniture & Fixtures",summary:"Desks, chairs, filing cabinets, conference table, reception per CK standards.",action:"Purchase and install per Comfort Keepers standards",timeline:"2-3 weeks before opening",cost:"$5,000-8,000"},
+{id:"1-3-5",title:"Install Signage (Interior/Exterior)",summary:"Brand-compliant CK signage per CKFI Standards Manual 2.3. Requires permits.",action:"Work with approved vendors for brand-compliant signage",timeline:"3-4 weeks before opening",cost:"$2,000-4,000"},
+{id:"1-3-6",title:"Set Up Phone System",summary:"VoIP business phone with voicemail, call routing, forwarding. Per CKFI Standard 2.6.",action:"Install and configure business phone system",timeline:"2 weeks before opening",cost:"$50-150/month"},
+{id:"1-3-7",title:"Computer Equipment & Software",summary:"Laptops/desktops, printers, monitors per franchise technology requirements. CKFI Standard 2.4.",action:"Purchase equipment meeting franchise requirements",timeline:"2 weeks before opening",cost:"$3,000-5,000"},
+{id:"1-3-8",title:"Office Supplies & Materials",summary:"Paper, pens, folders, client forms, first aid supplies, admin materials.",action:"Purchase from approved vendors",timeline:"1 week before opening",cost:"$500-1,000"},
+{id:"1-3-9",title:"Security System Installation",summary:"Alarm, cameras, after-hours protection for equipment and confidential client files.",action:"Contract security company for installation and monitoring",timeline:"Before moving in equipment",cost:"$500-1K install; $40-80/mo"},
+]},
+{name:"Technology & Platform Setup",items:[
+{id:"1-4-1",title:"Viv — Care Management Platform Setup",summary:"Primary care management and mobile documentation. Scheduling, EVV, care plans, caregiver mobile app. Per TECH-001.",action:"Complete full setup with Viv implementation team — configure service types, shift templates, EVV settings",timeline:"2-3 weeks before opening",cost:"Per franchise agreement"},
+{id:"1-4-2",title:"Viv — Staff Credentials & Role Permissions",summary:"Secure accounts for owner, office staff, care coordinators, caregivers with HIPAA-compliant access levels.",action:"Configure role-based permissions in Viv admin console",timeline:"During Viv setup",cost:"Included"},
+{id:"1-4-3",title:"Viv — Caregiver Mobile App Training",summary:"Train caregivers on mobile clock-in/out, visit documentation, care notes, schedule viewing.",action:"Conduct hands-on training sessions during orientation",timeline:"Before first client assignment",cost:"Included"},
+{id:"1-4-4",title:"Viv — Data Migration (if applicable)",summary:"If transitioning from another system, migrate existing client and caregiver data.",action:"Work with Viv support for data import",timeline:"Before go-live",cost:"Included or $500-1,500"},
+{id:"1-4-5",title:"Viventium — Payroll & HR Platform Setup",summary:"HR and payroll platform. Tax filing, direct deposit, onboarding workflows, benefits admin. Per TECH-002.",action:"Complete Viventium implementation — company setup, tax registrations, pay schedules, direct deposit config",timeline:"2-3 weeks before first hire",cost:"Per agreement"},
+{id:"1-4-6",title:"Viventium — Employee Self-Service Portal",summary:"Employee access for pay stubs, W-2s, PTO requests, personal info updates.",action:"Configure ESS portal and test employee access",timeline:"Before first hire",cost:"Included"},
+{id:"1-4-7",title:"CareAcademy — LMS Setup & Course Assignment",summary:"Learning management system for caregiver training compliance. Per TECH-003 and CKFI Standard 3.2.",action:"Set up CareAcademy account, assign MD-required training tracks, configure auto-enrollment for new hires",timeline:"2 weeks before first hire",cost:"Per learner/month"},
+{id:"1-4-8",title:"CareAcademy — MD Compliance Training Tracks",summary:"Configure Maryland-specific: 4-hr orientation, annual in-service (12+ hrs), dementia, infection control per COMAR 10.07.05.11.",action:"Assign COMAR-compliant course bundles and set completion deadlines",timeline:"Before first caregiver starts",cost:"Included in subscription"},
+{id:"1-4-9",title:"CareAcademy — CKFI Required Courses",summary:"CK-mandated courses: Professional Caregiver, Client Rights/HIPAA/Elder Abuse, Clean Environment, Cybersecurity, HIPAA for Office.",action:"Assign all 5 required CareAcademy courses per CKFI Standard 3.2",timeline:"Within 7 days of each hire",cost:"Included"},
+{id:"1-4-10",title:"CK Central / Box — Document Portal Setup",summary:"CKFI document submission platform. Upload franchise documents, access brand resources.",action:"Complete Box/CK Central setup, verify submission access",timeline:"Upon franchise signing",cost:"Included"},
+{id:"1-4-11",title:"POSH Subscription (Point of Sale/Home)",summary:"Required franchise subscription per CKFI Standard 1.4.",action:"Activate POSH subscription through CKFI",timeline:"Before opening",cost:"Per CKFI schedule"},
+{id:"1-4-12",title:"Set Up Email — CK Domain",summary:"Professional email (name@comfortkeepers.com) per CKFI Standard 1.2.",action:"Work with franchise IT support",timeline:"2 weeks before opening",cost:"Included"},
+{id:"1-4-13",title:"Configure Local Website Subdomain",summary:"annapolis.comfortkeepers.com — local info, lead gen, SEO optimization.",action:"Customize template with local info, photos, contact details",timeline:"3-4 weeks before opening",cost:"$100-200/mo hosting"},
+{id:"1-4-14",title:"Social Media Business Accounts",summary:"Facebook, Instagram, LinkedIn business pages per CKFI brand standards.",action:"Create using business info and CK brand assets",timeline:"2-3 weeks before opening",cost:"Free"},
+{id:"1-4-15",title:"Order Business Cards (Owner, Staff)",summary:"Professional cards per CK brand standards for networking and referral sources.",action:"Order through approved print vendor",timeline:"3 weeks before opening",cost:"$100-200"},
+{id:"1-4-16",title:"Order Brochures & Service Guides",summary:"Marketing materials for potential clients and referral sources. Key sales tools.",action:"Order branded materials from franchise-approved vendor",timeline:"3 weeks before opening",cost:"$300-500"},
+{id:"1-4-17",title:"Prepare Client Welcome Packets",summary:"Service agreement, client handbook, bill of rights, caregiver profiles, welcome letter.",action:"Assemble packets with all required documents",timeline:"1 week before opening",cost:"$100-200"},
+{id:"1-4-18",title:"Create Caregiver Recruitment Materials",summary:"Flyers, job descriptions, marketing materials to attract quality caregivers.",action:"Customize templates and print materials",timeline:"3-4 weeks before opening",cost:"$200-300"},
+{id:"1-4-19",title:"Order Branded Apparel & Name Tags",summary:"Polos, jackets per CK brand standards. Professional appearance and brand recognition.",action:"Order through approved apparel vendor",timeline:"3-4 weeks before opening",cost:"$500-1,000"},
+]}
+]},
+// ─── PHASE 2 ────────────────────────────────────────────────────────
+{id:"p2",phase:"Phase 2 — Staffing & Recruitment",icon:"👥",sub_phases:[
+{name:"Key Personnel",items:[
+{id:"2-1-1",title:"Define Owner/Administrator Role — Jordan Derby",summary:"Owner serves as RSA Administrator per COMAR. 22+ hrs/week commitment. Strategic planning, sales, financial management, staff oversight.",action:"Document role, responsibilities, time commitment",timeline:"Upon signing",cost:"Based on business performance"},
+{id:"2-1-2",title:"Owner HR Compliance Training",summary:"Employment laws, hiring practices, discrimination prevention, wage laws, HR best practices.",action:"Complete online courses or hire HR consultant",timeline:"Before first hire",cost:"$200-500"},
+{id:"2-1-3",title:"Owner Background Check & Clearances",summary:"Criminal background, OHCQ registry check — required for RSA administrator.",action:"Submit background check and obtain required clearances",timeline:"During licensing",cost:"$50-100"},
+{id:"2-1-4",title:"Recruit & Hire Office Manager",summary:"Office Manager. Reception, scheduling, billing, client inquiries, admin. Frees owner for sales/growth.",action:"Complete onboarding and system training",timeline:"2-3 weeks before opening",cost:"Salary + benefits"},
+{id:"2-1-5",title:"Complete Office Staff Onboarding",summary:"Paperwork, benefits enrollment, system training, service introduction, shadowing owner.",action:"Follow structured onboarding checklist",timeline:"1-2 weeks before opening",cost:"Included in salary"},
+{id:"2-1-6",title:"Set Up Employee Personnel Files",summary:"Confidential files: application, I-9, W-4, background check, job description, emergency contacts.",action:"Create secure filing system (physical and digital in Viventium)",timeline:"During onboarding",cost:"Included"},
+{id:"2-1-7",title:"Hire Care Coordinator",summary:"Conducts assessments, develops care plans, matches caregivers. Requires home care or nursing background.",action:"Recruit candidate, conduct interviews, check references",timeline:"2 weeks before opening",cost:"$40K-55K/year"},
+{id:"2-1-8",title:"Care Coordinator Certification",summary:"CK assessment techniques, care planning, client communication protocols.",action:"Complete CK certification program",timeline:"Within 30 days of hire",cost:"Included"},
+{id:"2-1-9",title:"Train Care Coordinator on Assessment Protocols",summary:"In-home assessments, needs identification, safety evaluations, documentation for care plan development.",action:"Complete training modules and shadow experienced coordinator",timeline:"First 2 weeks of employment",cost:"Included"},
+]},
+{name:"Caregiver Recruitment & Onboarding",items:[
+{id:"2-2-1",title:"Post Jobs — Indeed (Sponsored)",summary:"Primary job board for caregiver recruitment. Sponsored posts increase visibility.",action:"Create compelling posting highlighting culture, benefits, CK brand",timeline:"4-6 weeks before opening",cost:"$150-300/month"},
+{id:"2-2-2",title:"Post Jobs — Care.com",summary:"Care industry-specific platform with qualified candidates actively seeking caregiving.",action:"Create employer profile and post positions",timeline:"4-6 weeks before opening",cost:"$200-400/month"},
+{id:"2-2-3",title:"Post on Local Job Platforms",summary:"Community college career centers, Annapolis-area job boards, local employment sites.",action:"Post on 3-5 local platforms",timeline:"4-6 weeks before opening",cost:"$0-100/month"},
+{id:"2-2-4",title:"Partner with Community Organizations",summary:"Churches, community centers, senior centers, workforce development for caregiver referrals.",action:"Meet with organization leaders, provide job descriptions",timeline:"Ongoing from 4-6 weeks out",cost:"Free"},
+{id:"2-2-5",title:"Implement Caregiver Referral Program",summary:"$250-500 bonus per successful hire referral from current caregivers.",action:"Create referral bonus program with clear terms",timeline:"At opening",cost:"$250-500/referral"},
+{id:"2-2-6",title:"Attend Job Fairs & Community Events",summary:"Direct recruitment at job fairs, health career events. Face-to-face screening.",action:"Identify events, reserve booth, prepare materials",timeline:"Ongoing from 4 weeks out",cost:"$50-200/event"},
+{id:"2-2-7",title:"Application Review & Phone Screening",summary:"Systematic review focusing on experience, reliability, compassion, qualifications.",action:"Develop screening criteria and phone script",timeline:"Ongoing as applications received",cost:"Time"},
+{id:"2-2-8",title:"Conduct In-Person Interviews",summary:"Behavioral interview questions assessing personality, compassion, reliability, problem-solving, cultural fit.",action:"Schedule interviews, use structured interview guide",timeline:"2-3 weeks hiring process",cost:"Time"},
+{id:"2-2-9",title:"Criminal Background Checks",summary:"County, state, national criminal history. Mandatory for all caregivers per HR-001.",action:"Use approved background screening service",timeline:"After conditional offer",cost:"$25-50/candidate"},
+{id:"2-2-10",title:"OIG LEIE Exclusion List Check",summary:"Office of Inspector General List of Excluded Individuals/Entities. Required before hire and annually per HR-001.",action:"Check OIG LEIE database for each candidate and existing employees annually",timeline:"Before hire; annually thereafter",cost:"Free"},
+{id:"2-2-11",title:"Driving Record (MVR) Checks",summary:"Motor vehicle record for caregivers who will drive for work.",action:"Request MVR through screening service",timeline:"With background check",cost:"$10-20/candidate"},
+{id:"2-2-12",title:"Professional Reference Checks (Min. 2)",summary:"Contact minimum 2 professional references per COMAR. Verify employment history, reliability, caregiving skills.",action:"Call references with structured question list",timeline:"After interview, before offer",cost:"Time"},
+{id:"2-2-13",title:"Drug Screening",summary:"Pre-employment drug test for all caregivers.",action:"Send to approved testing facility (Vita Health Services)",timeline:"After conditional offer",cost:"$30-50/candidate"},
+{id:"2-2-14",title:"TB Testing (Vita Health Services)",summary:"Required for home care workers per COMAR 10.07.05.10B. See TB Testing OnePager.",action:"Send to Vita Health Services for TB testing",timeline:"Before first client assignment",cost:"$25-50/caregiver"},
+{id:"2-2-15",title:"Health Clearances",summary:"Physical exam confirming ability to perform caregiving duties safely.",action:"Provide health clearance form to caregiver's physician or use Vita Health",timeline:"Before first client assignment",cost:"$50-100 if provided"},
+{id:"2-2-16",title:"New Hire Paperwork (I-9, W-4, Direct Deposit)",summary:"Federally required employment documentation. Process through Viventium onboarding workflow.",action:"Complete via Viventium onboarding packet — I-9, W-4, direct deposit, handbook ack, confidentiality agreement",timeline:"First day of employment",cost:"Included"},
+{id:"2-2-17",title:"Employee Handbook Review & Signature",summary:"Policies, procedures, expectations, benefits per RSA Policy Manual.",action:"Provide handbook and obtain signed acknowledgment",timeline:"Orientation day",cost:"Included"},
+{id:"2-2-18",title:"Orientation Training (16-40 hours)",summary:"Company policies, Interactive Caregiving™, safety, infection control, client rights, basic skills. Per CKFI Standard 3.2 and COMAR 10.07.05.11.",action:"Conduct structured orientation — live in-person required before client contact, plus CareAcademy modules within 7 days",timeline:"Before first client assignment",cost:"Training wages"},
+{id:"2-2-19",title:"CK O&O Skills & Competency Checklist",summary:"CKFI required orientation & onboarding skills/competency checklist placed in employee file per Standard 3.2.",action:"Complete checklist during orientation, file in personnel record",timeline:"During orientation",cost:"Included"},
+{id:"2-2-20",title:"Dementia Care Training",summary:"Alzheimer's/dementia communication, behavioral management, safety. CareAcademy module.",action:"Complete CK dementia care program via CareAcademy",timeline:"Within 30 days of hire",cost:"Included in LMS"},
+{id:"2-2-21",title:"CPR/First Aid Certification",summary:"Emergency response training — AHA or Red Cross.",action:"Arrange certification class",timeline:"Within 60 days of hire",cost:"$50-75/caregiver"},
+{id:"2-2-22",title:"Caregiver Viv Mobile App Training",summary:"Mobile clock-in/out, visit documentation, care notes, schedule viewing.",action:"Hands-on training with practice scenarios during orientation",timeline:"During orientation",cost:"Included"},
+{id:"2-2-23",title:"Shadow Experienced Caregiver (2-4 shifts)",summary:"New caregivers accompany experienced staff on client visits before independent assignments.",action:"Schedule shadowing with top-performing caregivers",timeline:"First 1-2 weeks post-orientation",cost:"Double staffing during shadow"},
+]}
+]},
+// ─── PHASE 3 ────────────────────────────────────────────────────────
+{id:"p3",phase:"Phase 3 — Compliance & Regulatory",icon:"📋",sub_phases:[
+{name:"State & Local Compliance",items:[
+{id:"3-1-1",title:"RSA Policy & Procedure Manual — Final Verification",summary:"Complete manual: CLIN-001–017, ADM-001/003, HR-001/003/004/006, QAPI-001, RM-001, TECH-001–004, Section VII PDHA.",action:"Verify page numbers against paginated output, finalize for OHCQ submission",timeline:"Before RSA application",cost:"Completed"},
+{id:"3-1-2",title:"OHCQ Submission Package — Assemble",summary:"RSA license application + policy manual + business plan + all supporting documents per COMAR 10.07.05.04.",action:"Compile complete package per OHCQ field-by-field answer guide",timeline:"60-90 days before planned opening",cost:"$1,000 license fee"},
+{id:"3-1-3",title:"MD Caregiver Background Check Registry",summary:"State registry enrollment required before caregivers can provide care.",action:"Submit caregivers for registry enrollment",timeline:"Before first client assignment",cost:"$25-50/caregiver"},
+{id:"3-1-4",title:"MD Wage & Hour Compliance Setup",summary:"MD minimum wage ($15/hr 2025), overtime per FLSA, Maryland Healthy Working Families Act (paid sick leave).",action:"Configure compliant payroll in Viventium — overtime calculations, MHWFA accruals",timeline:"Before hiring employees",cost:"Included in payroll setup"},
+{id:"3-1-5",title:"Workers' Comp Coverage Verification",summary:"Active policy required before any employee starts. Certificate of insurance on file.",action:"Obtain certificate of insurance",timeline:"Before first hire",cost:"2-5% payroll"},
+{id:"3-1-6",title:"NPI Number — Confirm Active Status",summary:"Verify NPI registration is active and appearing in NPPES directory. Update if business info changes.",action:"Check NPPES registry, confirm NPI appears correctly for Comfort Keepers of Annapolis",timeline:"After registration; verify quarterly",cost:"Free"},
+]},
+{name:"Employment & Safety Compliance",items:[
+{id:"3-2-1",title:"Employee Handbook — Attorney Review",summary:"Must comply with FLSA, MD employment law, COMAR, MHWFA. Provides legal protection.",action:"Have employment attorney review complete handbook",timeline:"Before hiring employees",cost:"$500-1,500"},
+{id:"3-2-2",title:"Wage & Hour Policies Documentation",summary:"Pay rates, overtime calculation, time recording, meal breaks, payment schedules per FLSA and MD law.",action:"Document policies in handbook and train managers",timeline:"Before hiring",cost:"Included"},
+{id:"3-2-3",title:"Anti-Discrimination & Harassment Policies",summary:"Written policies per federal/state law with complaint procedures. Required.",action:"Include comprehensive policies in employee handbook",timeline:"Before hiring",cost:"Included"},
+{id:"3-2-4",title:"OSHA Safety Protocols — BBP & HazCom",summary:"OSHA 29 CFR 1910.1030 bloodborne pathogen training, hazard communication, injury reporting.",action:"Develop safety program and train all employees",timeline:"Before employees start working",cost:"$200-500"},
+{id:"3-2-5",title:"HIPAA Compliance Program",summary:"Privacy and security policies for PHI per TECH-001–004. BAAs with all vendors. CKFI Standard 2.7.",action:"Implement HIPAA policies, execute BAAs with Viv/Viventium/CareAcademy/all vendors, train staff",timeline:"Before first client",cost:"Included"},
+{id:"3-2-6",title:"Emergency Response Procedures",summary:"Protocols for client emergencies, falls, medical crises, natural disasters, caregiver no-shows, safety threats.",action:"Create comprehensive emergency manual per CLIN-012, train all staff",timeline:"Before first client assignment",cost:"Included"},
+{id:"3-2-7",title:"Infection Control Guidelines",summary:"Hand washing, PPE, body fluids, cleaning per CLIN-011 and OSHA BBP standard.",action:"Develop infection control program, stock PPE supplies",timeline:"Before first client",cost:"$200-300 PPE supplies"},
+]},
+{name:"Documentation & Recordkeeping",items:[
+{id:"3-3-1",title:"Client Care Plans & Service Agreement Templates",summary:"Standardized templates for assessments, individualized care plans, service agreements per CLIN-003/005.",action:"Customize CK templates for Maryland",timeline:"Before first client",cost:"Templates from franchise"},
+{id:"3-3-2",title:"Caregiver Personnel Files System",summary:"Confidential files: application, background checks, certifications, training records, evaluations. Per COMAR.",action:"Create secure filing system with proper access controls (physical + Viventium)",timeline:"Before hiring caregivers",cost:"Included"},
+{id:"3-3-3",title:"Incident & Accident Report System",summary:"Standardized forms per RM-001/CLIN-010. 24-hour notification protocols.",action:"Implement reporting system with escalation procedures",timeline:"Before first client",cost:"Included in franchise materials"},
+{id:"3-3-4",title:"Medication Management Logs & Policies",summary:"Documentation for medication reminders/administration per MD scope. Logs per CLIN-009.",action:"Create medication documentation system and train staff",timeline:"Before offering medication services",cost:"Included"},
+{id:"3-3-5",title:"Time & Attendance Records (EVV)",summary:"Electronic Visit Verification system for caregiver hours. Required by wage laws and for accurate billing.",action:"Confirm Viv EVV is configured and tested",timeline:"Before first caregiver assignment",cost:"Included in Viv"},
+{id:"3-3-6",title:"Quality Assurance Documentation",summary:"Forms for supervisory visits, client satisfaction surveys, caregiver evaluations, quality monitoring.",action:"Customize QA templates per QAPI-001",timeline:"Before first client",cost:"Included"},
+]},
+{name:"Quality & Safety Standards",items:[
+{id:"3-4-1",title:"Client Intake & Assessment Procedures",summary:"Step-by-step: inquiry → scheduling → comprehensive home evaluation → needs ID → service determination.",action:"Document procedures per CLIN-002/003, train care coordinators",timeline:"Before first client inquiry",cost:"Included"},
+{id:"3-4-2",title:"Care Plan Development Protocols",summary:"Translate assessment to individualized care plan: tasks, frequency, caregiver requirements, goals.",action:"Use CK templates, customize for Maryland per CLIN-005",timeline:"Before first client",cost:"Included"},
+{id:"3-4-3",title:"Medication Management Policies",summary:"Clear policies on MD scope: reminders vs. administration, documentation, caregiver training needed.",action:"Verify MD regulations, document compliant policies per CLIN-009",timeline:"Before offering medication services",cost:"Legal review $200-500"},
+{id:"3-4-4",title:"Client Rights & Privacy Policies",summary:"Written bill of rights per COMAR 10.07.05, ADM-003. HIPAA NPP for all clients.",action:"Post client bill of rights, implement HIPAA policies, distribute NPP",timeline:"Before first client",cost:"Included"},
+{id:"3-4-5",title:"Develop Care Needs Assessment Tools",summary:"Comprehensive forms evaluating physical, cognitive, social, environmental needs per CLIN-003.",action:"Customize CK assessment tools for MD",timeline:"Before first assessment",cost:"Forms from franchise"},
+{id:"3-4-6",title:"Client Onboarding Checklist",summary:"Paperwork, caregiver matching, schedule coordination, first visit preparation.",action:"Create checklist and train staff on full process",timeline:"Before first client",cost:"Included"},
+{id:"3-4-7",title:"Family Communication Procedures",summary:"Scheduled calls, care notes, updates to keep families informed and build trust.",action:"Create family communication schedule and documentation system in Viv",timeline:"Before first client",cost:"Included"},
+]},
+{name:"Risk Management",items:[
+{id:"3-5-1",title:"Incident Investigation Procedures",summary:"Formal process: root cause analysis, corrective action plans for accidents, complaints, quality concerns.",action:"Create incident investigation protocol per RM-001",timeline:"Before first client",cost:"Included"},
+{id:"3-5-2",title:"Quality Assurance Monitoring Plan",summary:"Scheduled supervisory visits, spot checks, client satisfaction surveys, caregiver reviews.",action:"Develop monitoring calendar and accountability system per QAPI-001",timeline:"Before first client",cost:"Time"},
+{id:"3-5-3",title:"Client Satisfaction Survey Process",summary:"Regular surveys measuring satisfaction with caregivers, services, responsiveness, experience.",action:"Implement automated survey system",timeline:"Launch with first clients",cost:"Included in Viv"},
+{id:"3-5-4",title:"Caregiver Supervision & Evaluation System",summary:"Regular supervisory visits, performance evaluations, continuing education, recognition.",action:"Develop evaluation forms and supervision schedule per HR-006",timeline:"Before first caregiver assignment",cost:"Time"},
+]},
+{name:"Required Documents — OHCQ Submission",items:[
+{id:"3-6-1",title:"RSA License Application (completed)",summary:"All fields completed per answer guide with policy page range references.",action:"File with OHCQ",timeline:"60-90 days before opening",cost:"$1,000"},
+{id:"3-6-2",title:"RSA Policy & Procedure Manual (FINAL)",summary:"Full manual — all CLIN, ADM, HR, QAPI, RM, TECH, Section VII PDHA policies. ~3,600+ paragraphs.",action:"Submit with application",timeline:"With RSA application",cost:"Completed"},
+{id:"3-6-3",title:"Business Plan with Financial Projections",summary:"Complete plan with infographics, financial scenario modeling, expense transparency.",action:"Submit with application",timeline:"With RSA application",cost:"Completed"},
+{id:"3-6-4",title:"Organizational Chart & Job Descriptions",summary:"Org chart showing reporting structure. All job descriptions per Section I of policy manual.",action:"Include with application",timeline:"With RSA application",cost:"Completed"},
+{id:"3-6-5",title:"Statement of Ownership & Control",summary:"Legal name, entity type, SDAT ID, ownership percentages, franchise disclosure, administrator designation.",action:"Complete per Section I template and submit",timeline:"With RSA application",cost:"Completed"},
+{id:"3-6-6",title:"Articles of Organization / Formation Docs",summary:"LLC formation documents from MD SDAT.",action:"Include certified copy",timeline:"With RSA application",cost:"Already filed"},
+{id:"3-6-7",title:"Certificate of Good Standing — MD SDAT",summary:"Proof business is in good standing with state.",action:"Request from SDAT",timeline:"Within 30 days of submission",cost:"$25-50"},
+{id:"3-6-8",title:"Proof of Insurance (all policies)",summary:"COIs for general liability, professional liability, workers' comp, cyber, EPLI, auto.",action:"Request certificates from all carriers",timeline:"Before submission",cost:"Included"},
+{id:"3-6-9",title:"Administrator Qualifications Documentation",summary:"Resume, credentials, background check for Jordan Derby as RSA Administrator.",action:"Compile and include with application",timeline:"With RSA application",cost:"Included"},
+{id:"3-6-10",title:"Floor Plan of Office Space",summary:"Diagram showing accessibility, client meeting areas, file storage.",action:"Create or obtain from landlord",timeline:"With RSA application",cost:"Minimal"},
+{id:"3-6-11",title:"Lease Agreement / Proof of Office Space",summary:"Executed lease for Annapolis office location.",action:"Include copy of lease",timeline:"With RSA application",cost:"Already executed"},
+{id:"3-6-12",title:"Plan of Care Template (completed)",summary:"POC template per CLIN-005. Training PowerPoint for care coordinators built.",action:"Include with application",timeline:"With RSA application",cost:"Completed"},
+{id:"3-6-13",title:"Client Service Agreement Template",summary:"Attorney-reviewed contract: services, rates, payment terms, cancellation, responsibilities.",action:"Have attorney review, include with application",timeline:"Before first client",cost:"Legal $300-500"},
+{id:"3-6-14",title:"Incident/Accident Report Forms",summary:"Standardized forms per RM-001 and CLIN-010.",action:"Include samples with application",timeline:"With RSA application",cost:"Included"},
+{id:"3-6-15",title:"Client Rights & Responsibilities Document",summary:"Bill of rights per COMAR 10.07.05 and ADM-003.",action:"Include with application",timeline:"With RSA application",cost:"Included"},
+{id:"3-6-16",title:"HIPAA Notice of Privacy Practices",summary:"Client-facing privacy notice per TECH-001.",action:"Include with application",timeline:"With RSA application",cost:"Included"},
+{id:"3-6-17",title:"RSA Certification Confirmation",summary:"Worker classification attestation per Health-General 19-4A-11. Completed via OHCQ online.",action:"Complete and print confirmation for file",timeline:"With RSA application",cost:"Included"},
+]}
+]},
+// ─── PHASE 4 ────────────────────────────────────────────────────────
+{id:"p4",phase:"Phase 4 — Vendor & Service Partners",icon:"🤝",sub_phases:[
+{name:"Core Operations Partners",items:[
+{id:"4-1-1",title:"Vita Health Services — TB & Occupational Health",summary:"Occupational health partner for employee TB testing, drug screening, health clearances.",action:"Establish account with Vita Health, confirm pricing, set up employee referral process",timeline:"Before first hire",cost:"Per-test pricing"},
+{id:"4-1-2",title:"Human Interest — 401(k) Plan Setup",summary:"Employee retirement benefits. Plan administration, enrollment, compliance. See 401k Employee Education Guide.",action:"Complete plan setup, configure employer match, integrate with Viventium payroll deductions",timeline:"Within 90 days of opening",cost:"Admin fee per participant/mo"},
+{id:"4-1-3",title:"Human Interest — Employee Enrollment & Education",summary:"Distribute 401k Employee Education Guide. Employee self-service enrollment.",action:"Schedule education session, distribute guide, open enrollment",timeline:"After plan setup",cost:"Included"},
+{id:"4-1-4",title:"CPA / Accounting Services — Engage",summary:"CPA firm for tax prep, quarterly filings, bookkeeping review, financial advisory.",action:"Interview and engage CPA with home care or franchise experience. Confirm monthly/quarterly deliverables.",timeline:"Before opening",cost:"$300-800/month"},
+{id:"4-1-5",title:"CPA — Quarterly Tax Filing Setup",summary:"Federal and MD quarterly estimated payments, payroll tax returns.",action:"Provide CPA access to Viventium reports and bank statements",timeline:"Before first quarter-end",cost:"Included in retainer"},
+{id:"4-1-6",title:"CPA — Year-End Tax Prep & Annual Return",summary:"Business tax return, franchise fee deductions, depreciation schedules.",action:"Schedule annual tax prep meeting",timeline:"Q1 following fiscal year",cost:"$1,500-3,000/yr"},
+{id:"4-1-7",title:"Employee Benefits — Health/Dental/Vision Setup",summary:"Group benefits per Benefit Guide (VPC MEC/MEC+ / First Health).",action:"Set up benefits admin in Viventium, schedule open enrollment",timeline:"Before first hire or within 90 days",cost:"Per employee/month"},
+{id:"4-1-8",title:"Business Associate Agreements (BAAs) — All Vendors",summary:"HIPAA requires BAAs with all vendors handling PHI: Viv, Viventium, CareAcademy, CPA, etc.",action:"Execute BAAs with all service providers before sharing any PHI",timeline:"Before opening / before sharing data",cost:"Included"},
+{id:"4-1-9",title:"Polsinelli — Licensure Consultant (if needed)",summary:"CKFI sole approved vendor for state licensure consulting per Standard 1.3. Alternative requires written CKFI approval.",action:"Engage Polsinelli if licensure assistance needed, or obtain written approval for alternative",timeline:"During licensing process",cost:"Per engagement"},
+]},
+{name:"PDHA Certification",items:[
+{id:"4-2-1",title:"PDHA Certification Application — National Alliance",summary:"Private Duty Home Care certification through National Alliance for Care at Home.",action:"Submit application per Section VII of policy manual",timeline:"After RSA license obtained",cost:"Application fee"},
+{id:"4-2-2",title:"PDHA Standards Compliance Review",summary:"Verify all policies meet PDHA certification requirements.",action:"Cross-reference policy manual Section VII against PDHA standards",timeline:"Before PDHA submission",cost:"Time"},
+]},
+{name:"CKFI Franchise Obligations",items:[
+{id:"4-3-1",title:"CKFI Mandatory Meeting Attendance (2+/year)",summary:"Per Standard 3.3: Owner/Designated Manager must attend minimum 2 CKFI meetings per year — national conference, PMG Summit, regional, co-op.",action:"Register for and attend required meetings. Budget for travel, lodging, registration fees.",timeline:"Ongoing — minimum 2/year",cost:"Registration + travel"},
+{id:"4-3-2",title:"Royalties Reporting Setup",summary:"Per CKFI Standard 7.2. Configure royalty reporting from Viv revenue data.",action:"Set up reporting workflow per CKFI schedule",timeline:"Before first revenue",cost:"Per franchise agreement"},
+{id:"4-3-3",title:"Minimum Performance Standards (MPS) Tracking",summary:"Per CKFI Standard 7.5: 350 hours/week mean average (rolling 3-month) or revenue-based MPS. 24-month waiver for new franchisees.",action:"Track weekly hours in Viv, build MPS monitoring dashboard",timeline:"Ongoing from opening",cost:"Time"},
+{id:"4-3-4",title:"Regional Director Strategic Plan Review",summary:"Per Standard 1.3: Review strategic plans with Regional Director via call or on-site visit.",action:"Schedule call/visit with Regional Director to review business plan and tactical execution",timeline:"Before opening and ongoing",cost:"Time"},
+{id:"4-3-5",title:"Client Agreements — CKFI Reporting",summary:"Per Standard 7.3: Report client agreements and plans of care per CKFI requirements.",action:"Configure reporting workflow",timeline:"From first client",cost:"Time"},
+{id:"4-3-6",title:"Truth in Reporting Compliance",summary:"Per CKFI Standard 7.6: Accurate and timely reporting of all required metrics.",action:"Establish accurate data collection and reporting processes",timeline:"From opening",cost:"Time"},
+{id:"4-3-7",title:"OHCQ Audit Reporting to CKFI",summary:"Per Standard 1.3: Immediately report any licensing authority audit request to Regional Director and VP of Franchise Operations. Forward audit results and plans of correction.",action:"Notify CKFI of any OHCQ contact immediately",timeline:"Ongoing",cost:"N/A"},
+]}
+]},
+// ─── PHASE 5 ────────────────────────────────────────────────────────
+{id:"p5",phase:"Phase 5 — Marketing & Business Dev",icon:"📢",sub_phases:[
+{name:"Market Research & Planning",items:[
+{id:"5-1-1",title:"Research Local Competitors (10-15 agencies)",summary:"Identify all home care agencies in AA County. Analyze services, pricing, reputation, strengths, weaknesses.",action:"Create competitor analysis spreadsheet",timeline:"6-8 weeks before opening",cost:"Time"},
+{id:"5-1-2",title:"Identify Service Gaps & Opportunities",summary:"Determine underserved niches: specialized dementia care, post-hospitalization, geographic gaps.",action:"Interview referral sources about unmet needs",timeline:"4-6 weeks before opening",cost:"Time"},
+{id:"5-1-3",title:"Analyze Competitor Pricing Strategies",summary:"Research competitive hourly rates for all service levels. Understand market floor/ceiling.",action:"Secret shop competitors, analyze pricing structures",timeline:"4-6 weeks before opening",cost:"Time"},
+{id:"5-1-4",title:"Review Competitor Marketing Approaches",summary:"Study competitor websites, advertising, community presence, messaging. Identify gaps to fill.",action:"Analyze competitor digital presence and marketing materials",timeline:"4-6 weeks before opening",cost:"Time"},
+{id:"5-1-5",title:"Analyze Senior Demographics — AA County",summary:"Age distribution, income levels, geographic concentration, growth projections.",action:"Review census data and MD Dept. of Aging reports",timeline:"During planning",cost:"Free"},
+{id:"5-1-6",title:"Map Hospital & Rehab Centers",summary:"All hospitals, rehab centers, SNFs in territory. Primary referral sources for post-discharge care.",action:"Create target list with contact info for discharge planners",timeline:"4 weeks before opening",cost:"Time"},
+{id:"5-1-7",title:"Map Assisted Living Facilities",summary:"ALFs often need supplemental home care. Partnership opportunities.",action:"List all ALFs in territory, research partnership models",timeline:"4 weeks before opening",cost:"Time"},
+{id:"5-1-8",title:"Identify Adult Day Care Centers",summary:"Adult day programs serve similar demographic. Referral and partnership opportunities.",action:"List all adult day care centers in territory",timeline:"4 weeks before opening",cost:"Time"},
+]},
+{name:"Marketing Implementation",items:[
+{id:"5-2-1",title:"Google My Business — Local SEO",summary:"Claim, verify, optimize GMB listing for Annapolis.",action:"Complete profile with services, hours, photos, service area",timeline:"3-4 weeks before opening",cost:"Free"},
+{id:"5-2-2",title:"Launch Paid Digital Ads (Google/Facebook)",summary:"Targeted ads — 'home care Annapolis', demographic targeting seniors/families.",action:"Develop ad creative, set $500-1K/month budget, launch campaigns",timeline:"2 weeks before opening",cost:"$500-1,000/mo"},
+{id:"5-2-3",title:"Press Release — Grand Opening",summary:"Announce CK Annapolis to local media, business journals, community newsletters.",action:"Draft release, distribute to 5-10 local outlets",timeline:"2 weeks before opening",cost:"$0-500"},
+{id:"5-2-4",title:"Social Media Content Calendar (30 days)",summary:"Scheduled posts: community events, caregiving tips, brand building, testimonials.",action:"Create and schedule 30 days of content",timeline:"1 week before opening",cost:"Time"},
+{id:"5-2-5",title:"Order Promotional Swag & Leave-Behinds",summary:"Pens, notepads, branded items for referral sources and community events.",action:"Design and order 3-5 promotional items",timeline:"3-4 weeks before opening",cost:"$500-1,000"},
+{id:"5-2-6",title:"Google Analytics & Conversion Tracking",summary:"Track website ROI, visitor sources, conversion rate.",action:"Install tracking code on website subdomain",timeline:"Before website launch",cost:"Free"},
+]},
+{name:"Referral Network Development",items:[
+{id:"5-3-1",title:"Create Referral Source Target List (Top 20)",summary:"Prioritized list of hospitals, physicians, attorneys, financial advisors, ALFs.",action:"Filter to top 20 contacts, assign outreach priorities",timeline:"4 weeks before opening",cost:"Time"},
+{id:"5-3-2",title:"Hospital Introductions — AAMC & Area Hospitals",summary:"Meet discharge planners and social workers at Anne Arundel Medical Center and others.",action:"Schedule 5-10 introductory meetings",timeline:"2-4 weeks before opening",cost:"Time"},
+{id:"5-3-3",title:"Physician Outreach — Geriatric & PCP (10-15)",summary:"In-person visits to primary care and geriatric specialist practices.",action:"Visit with brochures and introduction packets",timeline:"Starting 4 weeks before opening",cost:"Time"},
+{id:"5-3-4",title:"Elder Law Attorney Networking",summary:"Estate planning attorneys are key high-value referral sources.",action:"Attend bar association meetings, schedule one-on-one lunches",timeline:"Ongoing from 4 weeks out",cost:"$100-300 meals"},
+{id:"5-3-5",title:"Financial Advisor / Fiduciary Outreach",summary:"Financial professionals help families manage care costs — first point of contact for care decisions.",action:"Identify local professionals, send introductory packets",timeline:"Ongoing from 4 weeks out",cost:"Time"},
+{id:"5-3-6",title:"Host Lunch & Learn for Referral Sources",summary:"10-15 key referral sources. Educate on services and CK differentiation.",action:"Plan event, send invitations, develop presentation",timeline:"Within 30 days of opening",cost:"$200-500"},
+]},
+{name:"Community Engagement",items:[
+{id:"5-4-1",title:"Join Annapolis Chamber of Commerce",summary:"Networking, credibility, directory listing, marketing channels.",action:"Complete membership application and pay dues",timeline:"4 weeks before opening",cost:"$300-600/yr"},
+{id:"5-4-2",title:"Sponsor a Local Senior Event",summary:"Brand visibility within target demographic. Community commitment.",action:"Identify and sponsor senior center event or charity walk",timeline:"1 event per quarter",cost:"$250-1,000/event"},
+{id:"5-4-3",title:"Host Educational Seminars for Seniors/Families",summary:"Topics: caregiver stress, aging in place. Positions as expert, generates leads.",action:"Develop topics, partner with venues, promote events",timeline:"Monthly starting month 2",cost:"$100-300/event"},
+{id:"5-4-4",title:"Participate in Health Fairs",summary:"Community health fairs attract seniors seeking resources. Face-to-face lead generation.",action:"Register for booth space at area health fairs",timeline:"Spring and fall events",cost:"$50-200/event"},
+{id:"5-4-5",title:"Volunteer with Local Senior Organizations",summary:"Meals on Wheels, senior centers, aging advocacy. Builds relationships and goodwill.",action:"Identify volunteer opportunities, commit regular time",timeline:"Ongoing from month 2",cost:"Time"},
+]}
+]},
+// ─── PHASE 6 ────────────────────────────────────────────────────────
+{id:"p6",phase:"Phase 6 — Financial Management",icon:"💰",sub_phases:[
+{name:"Accounts & Banking",items:[
+{id:"6-1-1",title:"Review Initial Franchise Fee Payment",summary:"$59,950 franchise fee — verify payment processed and receipt filed.",action:"Confirm payment and file receipt",timeline:"Upon signing",cost:"$59,950 (paid)"},
+{id:"6-1-2",title:"Finalize Startup Budget & Capital Allocation",summary:"Detailed budget: fees, insurance, office setup, salaries, marketing. Ensure capital allocated correctly.",action:"Create final spreadsheet from FDD estimates, finalize funding access",timeline:"Before opening",cost:"Included in planning"},
+{id:"6-1-3",title:"Open Business Bank Accounts",summary:"Separate checking and savings. Required for liability protection and tax compliance.",action:"Open with local commercial bank using EIN + formation docs",timeline:"Within 7 days of EIN",cost:"Minimal"},
+{id:"6-1-4",title:"Implement Accounting Software",summary:"QuickBooks or similar for AR, AP, and financial reporting.",action:"Set up chart of accounts per franchise standards, integrate with bank",timeline:"Before opening",cost:"$50-150/mo"},
+{id:"6-1-5",title:"Viventium — Payroll Processing Live",summary:"Confirm payroll is processing correctly — tax withholding, direct deposit, MD taxes.",action:"Run test payroll before first pay period",timeline:"Before first payday",cost:"Included in Viventium"},
+{id:"6-1-6",title:"Cash Flow Forecast Model",summary:"Weekly/monthly forecast preventing cash shortfalls.",action:"Build cash flow forecasting spreadsheet",timeline:"Before opening",cost:"Time"},
+{id:"6-1-7",title:"Budget vs. Actual Monitoring",summary:"Monthly variance analysis against projections. Identifies issues early.",action:"Create budget comparison reports",timeline:"Monthly from month 1",cost:"Time"},
+{id:"6-1-8",title:"KPI Dashboard — Excel or Viv Reporting",summary:"Revenue/client, caregiver utilization, gross margin, retention. Data-driven management.",action:"Create KPI dashboard",timeline:"At opening",cost:"Time"},
+]},
+{name:"Pricing & Revenue",items:[
+{id:"6-2-1",title:"Competitive Rate Analysis — Final",summary:"Secret shop competitors for hourly, live-in, specialty pricing.",action:"Compile pricing data spreadsheet",timeline:"4-6 weeks before opening",cost:"Time"},
+{id:"6-2-2",title:"Finalize Rate Sheet & Pricing Structure",summary:"Final pricing for all service levels with target margins. Share with staff.",action:"Create rate sheet and print materials",timeline:"2 weeks before opening",cost:"Included"},
+{id:"6-2-3",title:"Assessment Fee Schedule",summary:"Determine if initial in-home assessments have a fee. Critical for sales process.",action:"Create assessment scheduling procedures and fee policy",timeline:"Before first inquiry",cost:"Time"},
+{id:"6-2-4",title:"Client Billing & Invoicing — Viv Setup",summary:"Configure billing cycle (weekly/bi-weekly), automated invoicing in Viv.",action:"Set up Viv billing module, train staff on invoicing process",timeline:"Before first client",cost:"Included in Viv"},
+]}
+]},
+// ─── PHASE 7 ────────────────────────────────────────────────────────
+{id:"p7",phase:"Phase 7 — Client Services Setup",icon:"🏠",sub_phases:[
+{name:"Client Operations",items:[
+{id:"7-1-1",title:"Caregiver-Client Matching System",summary:"Systematic matching: skills, personality, availability, preferences.",action:"Document matching criteria, train care coordinator",timeline:"Before first client",cost:"Included"},
+{id:"7-1-2",title:"Backup Caregiver Protocols",summary:"Replacement procedures for illness, emergency, no-show. Essential for reliability.",action:"Create on-call schedule and emergency contact list",timeline:"Before first client",cost:"Included"},
+{id:"7-1-3",title:"Client Billing & Invoicing Cycle — Test",summary:"Test automated invoicing in Viv. Define payment collection policies.",action:"Configure Viv billing module, run test invoices",timeline:"Before first client",cost:"Included"},
+{id:"7-1-4",title:"Payroll Processing System — Integration Test",summary:"Viv hours → Viventium payroll. Verify overtime, deductions, direct deposit.",action:"Run test payroll cycle end-to-end",timeline:"Before first caregiver payday",cost:"Included"},
+{id:"7-1-5",title:"First Client Intake — Full Process",summary:"First real client through complete workflow: inquiry → assessment → care plan → match → first visit.",action:"Execute full operations workflow per CLIN-002 through CLIN-005",timeline:"Opening week",cost:"Operational"},
+]}
+]},
+// ─── PHASE 8 ────────────────────────────────────────────────────────
+{id:"p8",phase:"Phase 8 — Operations Launch (90 Days)",icon:"🚀",sub_phases:[
+{name:"Quality Assurance & QAPI",items:[
+{id:"8-1-1",title:"Weekly Caregiver Check-ins",summary:"Regular contact for support, feedback, job satisfaction. Improves retention and quality.",action:"Schedule weekly check-in calls or meetings",timeline:"From first caregiver",cost:"Time"},
+{id:"8-1-2",title:"Monthly Client Satisfaction Calls",summary:"Proactive outreach to clients and families. Assess satisfaction, identify issues early.",action:"Create satisfaction call script and tracking system",timeline:"From first client",cost:"Time"},
+{id:"8-1-3",title:"Initial Supervisory Visits",summary:"Unannounced visits to client homes during care delivery to observe caregiver performance.",action:"Schedule within first 30 days of each new client's service start",timeline:"Ongoing from first clients",cost:"Supervisor time"},
+{id:"8-1-4",title:"90-Day Care Plan Reviews",summary:"Formal review of care plans every 90 days per CLIN-005. Assess changing needs, adjust services.",action:"Build 90-day review calendar and forms",timeline:"Every 90 days",cost:"Time"},
+{id:"8-1-5",title:"QAPI Program — Launch",summary:"Quality Assurance Performance Improvement per QAPI-001. Committee meetings and reporting.",action:"Initiate QAPI committee meetings, establish reporting cadence",timeline:"Within 30 days of first client",cost:"Time"},
+{id:"8-1-6",title:"Incident Investigation & Corrective Action",summary:"Implement formal investigation for any incidents, complaints. Root cause analysis.",action:"Train staff on reporting, investigation, corrective action workflow",timeline:"Before first client",cost:"Time"},
+{id:"8-1-7",title:"Client Feedback & Online Review Collection",summary:"Systematic Google/Facebook review requests. Target 4.8+ stars, 20+ reviews year 1.",action:"Implement review request process for satisfied clients",timeline:"Ongoing from opening",cost:"Time"},
+{id:"8-1-8",title:"Caregiver Performance Evaluations",summary:"Formal reviews at 90 days and 6 months. Skills, reliability, client satisfaction, development.",action:"Create evaluation forms and schedule",timeline:"90 days / 6 months post-hire",cost:"Time"},
+{id:"8-1-9",title:"Ongoing Training & CEU Plan",summary:"Monthly in-service training. Required 12+ hours annually per COMAR 10.07.05.11.",action:"Create monthly training calendar through CareAcademy",timeline:"Monthly from opening",cost:"Time + CareAcademy"},
+]},
+{name:"KPI Tracking — First 90 Days",items:[
+{id:"8-2-1",title:"Track Caregiver Retention Rate",summary:"% retained over 90 days and 1 year. High retention = quality and cost control.",action:"Calculate monthly retention rate",timeline:"Monthly from month 1",cost:"Time"},
+{id:"8-2-2",title:"Monitor Client Retention Rate",summary:"% of clients retained. Indicates satisfaction and business health.",action:"Calculate monthly client retention rate",timeline:"Monthly from month 1",cost:"Time"},
+{id:"8-2-3",title:"Client Satisfaction Score (CSAT/NPS)",summary:"Target: 4.5+ out of 5.0 from client surveys.",action:"Review survey results in Viv, address complaints, improve training",timeline:"Ongoing from opening",cost:"Included in Viv"},
+{id:"8-2-4",title:"Lead Generation Rate",summary:"New inquiries per month from all sources. Target: 20-30 qualified inquiries initially.",action:"Track leads in Viv, adjust marketing spend if below target",timeline:"Monthly from month 1",cost:"Included"},
+{id:"8-2-5",title:"Inquiry-to-Client Conversion Rate",summary:"% of inquiries becoming paying clients. Target: 30-40%.",action:"Review Viv reporting on inquiry outcomes, improve sales process",timeline:"Monthly from month 1",cost:"Included"},
+{id:"8-2-6",title:"Cost Per Acquisition",summary:"Total marketing costs ÷ new clients acquired. Target: under $500/client.",action:"Track marketing expenses vs. new clients, optimize spend",timeline:"Monthly from month 1",cost:"Time"},
+{id:"8-2-7",title:"Referral Source Productivity",summary:"Clients referred by each source. Target: top 10 sources generate 50%+ of clients.",action:"Review referral source field in Viv, nurture top sources",timeline:"Monthly from month 1",cost:"Included"},
+{id:"8-2-8",title:"Website Traffic & Engagement",summary:"Monthly visitors, page views, time on site. Target: 200+ visitors/month, 2+ min avg.",action:"Review Google Analytics, improve SEO/content marketing",timeline:"Monthly from month 1",cost:"Time"},
+{id:"8-2-9",title:"MPS Hours Tracking — CKFI",summary:"Track toward 350 hrs/week mean average (rolling 3-month) per CKFI Standard 7.5. 24-month waiver period.",action:"Weekly hours tracking in Viv, monthly CKFI reporting",timeline:"Weekly from opening",cost:"Time"},
+]}
+]}
+];
 
-            // PHASE 2: STAFFING & RECRUITMENT
-            {
-                phase: "Phase 2: Staffing & Recruitment",
-                sub_phases: [
-                    {
-                        name: "Key Personnel Hiring",
-                        items: [
-                            { title: "Establish Owner/Operator Role", summary: "Owner actively manages business with 22 hours per week commitment minimum (per your plan). Responsibilities include strategic planning, sales, financial management, and staff supervision.", action: "Define role, responsibilities, and time commitment", timeline: "Immediately upon franchise signing", duration: "1 day", cost: "Owner compensation based on business performance" },
-                            { title: "Complete Owner HR Compliance Training", summary: "Training on employment laws, hiring practices, discrimination prevention, wage laws, and HR best practices. Critical for avoiding costly employment mistakes.", action: "Complete online courses or hire HR consultant for training", timeline: "Before hiring first employee", duration: "1-3 days", cost: "$200-500 for training" },
-                            { title: "Complete Owner Background Check and Clearances", summary: "Many states require owners and managers to pass background checks and obtain health clearances when operating home care agency. Demonstrates commitment to safety.", action: "Submit to background check and obtain required clearances", timeline: "During licensing process", duration: "30-90 days (Concurrent)", cost: "$50-100" },
-                            { title: "Recruit Office Staff Position", summary: "Critical first hire handles reception, scheduling, billing, client inquiries, and administrative tasks. Frees owner for sales and growth activities. Budget $52,000/year.", action: "Post job, conduct interviews, check references", timeline: "Hire 2-3 weeks before opening", duration: "14-21 days", cost: "$52,000/year salary plus benefits" },
-                            { title: "Interview and Hire Office Staff", summary: "Structured interview process assessing skills, experience with seniors, customer service ability, organizational skills, and cultural fit.", action: "Conduct 2-3 rounds of interviews, skills testing if needed", timeline: "3-4 weeks before opening", duration: "21-28 days", cost: "Included in recruitment" },
-                            { title: "Complete Office Staff Onboarding", summary: "Comprehensive onboarding including paperwork, benefits enrollment, training on systems, introduction to services, and shadowing owner.", action: "Follow structured onboarding checklist", timeline: "1-2 weeks before opening", duration: "7-14 days", cost: "Included in salary" },
-                            { title: "Set Up Office Staff Employee Files", summary: "Confidential personnel file containing application, I-9, W-4, background check, job description, emergency contacts, and performance documentation.", action: "Create secure filing system (physical and digital)", timeline: "During onboarding", duration: "N/A (Included in onboarding)", cost: "Included in office supplies" },
-                            { title: "Hire Experienced Care Coordinator", summary: "Care Coordinator conducts assessments, develops care plans, matches caregivers to clients, manages ongoing care, and serves as primary client contact. Critical quality role.", action: "Recruit candidate with home care or nursing background", timeline: "Hire 2 weeks before opening", duration: "14 days", cost: "$40,000-55,000/year depending on experience" },
-                            { title: "Complete Care Coordinator Certification", summary: "Specialized training in assessment techniques, care planning, client communication, and Comfort Keepers protocols. May include state-required certifications.", action: "Enroll in Comfort Keepers certification program", timeline: "Within first 30 days of employment", duration: "30 days", cost: "Included in training; time investment" },
-                            { title: "Train Care Coordinator on Assessment Protocols", summary: "Detailed training on conducting in-home assessments, identifying care needs, safety evaluations, and documenting findings for care plan development.", action: "Complete training modules and shadow experienced coordinator", timeline: "First 2 weeks of employment", duration: "14 days", cost: "Included in training" },
-                            { title: "Shadow Existing Coordinator (if available)", summary: "Hands-on learning by accompanying experienced care coordinator on assessments and client visits. Accelerates learning and ensures quality standards.", action: "Arrange shadowing with nearby franchise or during training", timeline: "First 1-2 weeks", duration: "7-14 days", cost: "Travel if shadowing at another location" }
-                        ]
-                    },
-                    {
-                        name: "Caregiver Recruitment & Onboarding",
-                        items: [
-                            { title: "Post Jobs on Indeed", summary: "Indeed is primary job board for caregiver recruitment. Sponsored posts increase visibility. Target compassionate individuals with caregiving interest or experience.", action: "Create compelling job posting highlighting culture and benefits", timeline: "4-6 weeks before opening", duration: "28-42 days", cost: "$150-300/month for sponsored posts" },
-                            { title: "Post Jobs on Care.com", summary: "Care.com specifically serves care industry with qualified candidates actively seeking caregiving positions. High-quality applicant source.", action: "Create employer profile and post positions", timeline: "4-6 weeks before opening", duration: "28-42 days", cost: "$200-400/month for employer access" },
-                            { title: "Post on Local Job Platforms", summary: "Leverage local job boards, community college career centers, and Annapolis-area employment websites to reach local candidates.", action: "Identify and post on 3-5 local platforms", timeline: "4-6 weeks before opening", duration: "28-42 days", cost: "$0-100/month" },
-                            { title: "Partner with Community Organizations", summary: "Build relationships with churches, community centers, senior centers, and workforce development organizations that can refer caregiving candidates.", action: "Meet with organization leaders, provide job descriptions", timeline: "Ongoing, start 4-6 weeks before opening", duration: "N/A (Ongoing)", cost: "Free; relationship building" },
-                            { title: "Implement Caregiver Referral Program", summary: "Incentivize current caregivers to refer qualified candidates. Typical bonus $250-500 per successful hire.", action: "Create referral bonus program with clear terms", timeline: "Launch at opening", duration: "1 day", cost: "$250-500 per successful referral" },
-                            { title: "Attend Job Fairs and Community Events", summary: "Direct recruitment at job fairs, community events, and health career events. Allows face-to-face interaction and immediate screening.", action: "Identify events, reserve booth space, prepare materials", timeline: "Ongoing starting 4 weeks before opening", duration: "N/A (Ongoing)", cost: "$50-200 per event" },
-                            { title: "Review Applications and Initial Screening", summary: "Systematic review of applications focusing on relevant experience, reliability, compassion, and basic qualifications. Phone screening filters for communication skills.", action: "Develop screening criteria and phone script", timeline: "Ongoing as applications received", duration: "N/A (Ongoing)", cost: "Time investment" },
-                            { title: "Conduct In-Person Interviews", summary: "Face-to-face interviews assessing personality, compassion, reliability, problem-solving skills, and cultural fit. Use behavioral interview questions.", action: "Schedule interviews, use structured interview guide", timeline: "Ongoing, plan 2-3 weeks for hiring process", duration: "14-21 days", cost: "Time investment" },
-                            { title: "Conduct Criminal Background Checks", summary: "Mandatory comprehensive background check including criminal history at county, state, and national levels. Protects vulnerable clients.", action: "Use background screening service approved for home care", timeline: "After conditional offer, before start date", duration: "3.5 days", cost: "$25-50 per candidate" },
-                            { title: "Check Driving Records", summary: "MVR (motor vehicle record) check for caregivers who will drive for work. Ensures safe driving history.", action: "Request MVR through background screening service", timeline: "With background check", duration: "3-5 days", cost: "$10-20 per candidate" },
-                            { title: "Check Professional References", summary: "Contact minimum 3 professional references to verify employment history, reliability, caregiving skills, and character. Critical for predicting performance.", action: "Call references with structured question list", timeline: "After interview, before offer", duration: "1-3 days", cost: "Time investment" },
-                            { title: "Complete Drug Screening", summary: "Pre-employment drug test ensures caregivers are not using substances that could impair judgment or performance.", action: "Send candidates to approved testing facility", timeline: "After conditional offer", duration: "1-3 days", cost: "$30-50 per candidate" },
-                            { title: "Conduct TB Testing", summary: "Tuberculosis testing required in most states for home care workers. Protects both caregivers and vulnerable clients.", action: "Require recent TB test or provide testing", timeline: "Before first client assignment", duration: "1-3 days", cost: "$25-50 per caregiver if provided" },
-                            { title: "Obtain Health Clearances", summary: "General health screening ensuring caregiver can physically perform job requirements and doesn't pose health risk to clients. May include physical exam.", action: "Provide health clearance form to caregiver's physician", timeline: "Before first client assignment", duration: "1-3 days", cost: "Caregiver responsibility or $50-100 if provided" },
-                            { title: "Complete New Hire Paperwork", summary: "I-9, W-4, state withholding, direct deposit, emergency contacts, and acknowledgment forms. Legally required documentation.", action: "Provide packet and verify completion of all forms", timeline: "First day of employment", duration: "1 day", cost: "Included" },
-                            { title: "Review and Sign Employee Handbook", summary: "Employee handbook outlines policies, procedures, expectations, benefits, and rules. Signed acknowledgment protects employer in disputes.", action: "Provide handbook and obtain signed acknowledgment", timeline: "Orientation day", duration: "1 day", cost: "Included" },
-                            { title: "Complete Orientation Training", summary: "Comprehensive initial training covering company policies, care philosophy, safety procedures, infection control, client rights, and basic caregiving skills. Typically 16-40 hours.", action: "Conduct structured orientation program", timeline: "Before first client assignment", duration: "2-5 days", cost: "Training wages $12-15/hour x training hours" },
-                            { title: "Dementia Care Training Certification", summary: "Specialized training in caring for clients with Alzheimer's and dementia including communication techniques, behavioral management, and safety.", action: "Complete Comfort Keepers dementia care program", timeline: "Within first 30 days", duration: "30 days", cost: "Included in training program" },
-                            { title: "CPR/First Aid Certification", summary: "Emergency response training prepares caregivers to handle medical emergencies. Required or strongly recommended in most states.", action: "Arrange class through American Heart Association or Red Cross", timeline: "Within first 60 days", duration: "60 days", cost: "$50-75 per caregiver" },
-                            { title: "Technology Platform Training for Caregivers", summary: "Training on using mobile app or call system for clocking in/out, documenting care, reporting issues, and viewing schedules.", action: "Hands-on training with practice scenarios", timeline: "During orientation", duration: "1 day", cost: "Included" },
-                            { title: "Shadow Experienced Caregiver on Initial Shifts", summary: "New caregivers accompany experienced caregiver on 2-4 client visits before independent assignments. Builds confidence and ensures quality.", action: "Schedule shadowing shifts with top-performing caregivers", timeline: "First 1-2 weeks after orientation", duration: "7-14 days", cost: "Pay for both caregivers during shadowing" }
-                        ]
-                    }
-                ]
-            },
+// ═══════════════════════════════════════════════════════════════════════
+// APP STATE & STORAGE
+// ═══════════════════════════════════════════════════════════════════════
+const ALL_ITEMS = PHASES.flatMap(p=>p.sub_phases.flatMap(sp=>sp.items));
+const TOTAL = ALL_ITEMS.length;
+let statuses = {};
+let notes = {};
+let activePhase = "dashboard";
+let expandedSubs = {};
+let searchText = "";
+let filterStatus = "all";
+let editingNote = null;
 
-            // PHASE 3: COMPLIANCE & REGULATORY
-            {
-                phase: "Phase 3: Compliance & Regulatory",
-                sub_phases: [
-                    {
-                        name: "State & Local Compliance",
-                        items: [
-                            { title: "Register as Home Care Provider with Maryland OHCQ", summary: "Maryland Office of Health Care Quality oversees home care agencies. Registration ensures compliance with state care standards and allows legal operation.", action: "Submit application with required documentation", timeline: "60-90 days before planned opening", duration: "60-90 days", cost: "$200-500 application fee" },
-                            { title: "Complete Caregiver Background Check Registry", summary: "Maryland maintains registry of caregiver background checks. Caregivers must be registered and cleared before providing care.", action: "Submit caregivers for registry enrollment", timeline: "Before first client assignment", duration: "N/A (Milestone)", cost: "$25-50 per caregiver" },
-                            { title: "Comply with Maryland Wage and Hour Laws", summary: "Follow Maryland minimum wage ($15/hour as of 2025), overtime rules (time and half over 40 hours), and payment timing requirements. Violations result in penalties and lawsuits.", action: "Set up compliant payroll system and policies", timeline: "Before hiring employees", duration: "N/A (Milestone)", cost: "Included in payroll setup" },
-                            { title: "Verify Workers' Compensation Coverage", summary: "Maryland requires workers' comp for all employers with employees. Coverage must be active before first employee starts.", action: "Obtain policy and certificate of insurance", timeline: "Before hiring first employee", duration: "N/A (Milestone)", cost: "2-5% of payroll" }
-                        ]
-                    },
-                    {
-                        name: "Employment Compliance",
-                        items: [
-                            { title: "Create Compliant Employee Handbook", summary: "Handbook documents all employment policies, procedures, benefits, and rules. Must comply with federal and Maryland employment laws. Provides legal protection.", action: "Work with employment attorney or HR consultant", timeline: "Complete before hiring employees", duration: "7-14 days", cost: "$500-1,500 for attorney review" },
-                            { title: "Establish Wage and Hour Policies", summary: "Clear policies on pay rates, overtime calculation, time recording, meal breaks, and payment schedules. Must comply with FLSA and Maryland law.", action: "Document policies in handbook and train managers", timeline: "Before hiring employees", duration: "N/A (Milestone)", cost: "Included in handbook development" },
-                            { title: "Implement Anti-Discrimination and Harassment Policies", summary: "Written policies prohibiting discrimination and harassment based on protected classes. Required by law and essential for workplace culture. Must include complaint procedures.", action: "Include comprehensive policies in handbook", timeline: "Before hiring employees", duration: "N/A (Milestone)", cost: "Included in handbook development" },
-                            { title: "Set Up OSHA-Compliant Safety Protocols", summary: "Occupational Safety and Health Administration requires workplace safety programs including bloodborne pathogen training, hazard communication, and injury reporting.", action: "Develop safety program and train employees", timeline: "Before employees start working", duration: "1-3 days", cost: "$200-500 for program development" },
-                            { title: "Create Emergency Response Procedures", summary: "Written protocols for handling client emergencies including falls, medical crises, natural disasters, and caregiver safety threats. Ensures consistent, appropriate response.", action: "Document procedures and train all staff and caregivers", timeline: "Before first client assignment", duration: "1-3 days", cost: "Included in policy development" }
-                        ]
-                    },
-                    {
-                        name: "Documentation & Recordkeeping",
-                        items: [
-                            { title: "Establish Client Care Plans and Service Agreements", summary: "Standardized templates for assessing client needs, developing individualized care plans, and documenting service agreements including scope, rates, and terms.", action: "Customize Comfort Keepers templates for your market", timeline: "Before first client", duration: "1 day", cost: "Templates provided by franchise" },
-                            { title: "Set Up Caregiver Personnel Files", summary: "Confidential files for each caregiver containing application, background checks, certifications, training records, performance evaluations, and disciplinary actions. Required by law and accreditation.", action: "Create secure filing system with proper access controls", timeline: "Set up system before hiring caregivers", duration: "N/A (Milestone)", cost: "Included in office supplies" },
-                            { title: "Create Incident and Accident Report System", summary: "Standardized forms and procedures for documenting client falls, injuries, medication errors, complaints, or any adverse events. Critical for liability protection and quality improvement.", action: "Implement reporting system with 24-hour notification protocols", timeline: "Before first client assignment", duration: "1 day", cost: "Forms included in franchise materials" },
-                            { title: "Establish Medication Management Logs", summary: "If providing medication reminders or administration (per state scope), detailed logs documenting all medication-related activities. Required for compliance and liability protection.", action: "Create medication documentation system and train staff", timeline: "Before offering medication services", duration: "N/A (Milestone)", cost: "Included in documentation system" },
-                            { title: "Set Up Time and Attendance Records", summary: "Accurate system for tracking caregiver hours including clock in/out times, breaks, and client visit verification. Required by wage laws and for accurate billing.", action: "Implement electronic visit verification (EVV) system", timeline: "Before first caregiver assignment", duration: "N/A (Milestone)", cost: "Included in operations software" },
-                            { title: "Create Quality Assurance Documentation", summary: "Forms and checklists for supervisory visits, client satisfaction surveys, caregiver evaluations, and quality monitoring. Demonstrates commitment to excellence.", action: "Customize quality assurance templates", timeline: "Before first client assignment", duration: "1 day", cost: "Included in franchise materials" }
-                        ]
-                    },
-                    {
-                        name: "Quality & Safety Standards",
-                        items: [
-                            { title: "Develop Client Intake and Assessment Procedures", summary: "Step-by-step process for receiving inquiries, scheduling assessments, conducting comprehensive home evaluations, identifying needs, and determining service appropriateness.", action: "Document procedures and train care coordinators", timeline: "Complete before taking first client inquiry", duration: "1 day", cost: "Included in operations manual" },
-                            { title: "Create Care Plan Development Protocols", summary: "Standardized process for translating assessment findings into detailed, individualized care plans specifying tasks, frequency, caregiver requirements, and goals.", action: "Use Comfort Keepers templates and customize for Maryland", timeline: "Before first client", duration: "1day", cost: "Included in franchise materials" },
-                            { title: "Establish Medication Management Policies", summary: "Clear policies on scope of medication services allowed in Maryland including reminders vs. administration, documentation requirements, and caregiver training needed.", action: "Verify Maryland regulations and document compliant policies", timeline: "Before offering any medication services", duration: "N/A (Milestone)", cost: "Legal review $200-500" },
-                            { title: "Document Emergency Procedures and Protocols", summary: "Written protocols for handling medical emergencies, client death, natural disasters, caregiver no-shows, and other crisis situations. Includes emergency contact chains.", action: "Create comprehensive emergency manual", timeline: "Before first client assignment", duration: "1 day", cost: "Included in policy development" },
-                            { title: "Implement Infection Control Guidelines", summary: "Policies and training on preventing disease transmission including hand washing, use of personal protective equipment (PPE), handling body fluids, and cleaning procedures.", action: "Develop infection control program, stock PPE supplies", timeline: "Before first client assignment", duration: "1 day", cost: "$200-300 for initial PPE supplies" },
-                            { title: "Establish Client Rights and Privacy Policies", summary: "Written documentation of client rights including dignity, choice, privacy, and confidentiality. HIPAA compliance procedures for protecting health information.", action: "Post client bill of rights, implement HIPAA policies", timeline: "Before first client", duration: "1 day", cost: "Included in compliance materials" }
-                        ]
-                    },
-                    {
-                        name: "Risk Management",
-                        items: [
-                            { title: "Implement Incident Reporting System", summary: "Formal process requiring immediate reporting of any incidents affecting client safety, health, or rights. Includes investigation procedures and corrective action plans.", action: "Train all staff on reporting requirements and procedures", timeline: "Before first client assignment", duration: "1 day", cost: "Included in operations system" },
-                            { title: "Create Quality Assurance Monitoring Plan", summary: "Scheduled supervisory visits, random spot checks, client satisfaction surveys, and caregiver performance reviews to ensure service quality and identify improvement areas.", action: "Develop monitoring calendar and accountability system", timeline: "Before first client assignment", duration: "1 day", cost: "Time investment for monitoring activities" },
-                            { title: "Establish Client Satisfaction Survey Process", summary: "Regular surveys (monthly or quarterly) measuring client satisfaction with caregivers, services, office responsiveness, and overall experience. Critical feedback for quality improvement.", action: "Implement automated survey system", timeline: "Launch with first clients", duration: "1 day", cost: "Included in CRM system" },
-                            { title: "Create Caregiver Supervision and Evaluation System", summary: "Formal program of regular supervisory visits, performance evaluations, continuing education, and recognition. Improves quality and retention.", action: "Develop evaluation forms and supervision schedule", timeline: "Before first caregiver assignment", duration: "1day", cost: "Time investment for supervision" }
-                        ]
-                    }
-                ]
-            },
+async function loadState(){
+  try{const s=await window.storage.get("ck-tracker-statuses");if(s)statuses=JSON.parse(s.value)}catch(e){}
+  try{const n=await window.storage.get("ck-tracker-notes");if(n)notes=JSON.parse(n.value)}catch(e){}
+}
+async function saveState(){
+  try{await window.storage.set("ck-tracker-statuses",JSON.stringify(statuses))}catch(e){}
+  try{await window.storage.set("ck-tracker-notes",JSON.stringify(notes))}catch(e){}
+}
 
-            // PHASE 4: MARKETING & BUSINESS DEVELOPMENT
-            {
-                phase: "Phase 4: Marketing & Business Development",
-                sub_phases: [
-                    {
-                        name: "Market Research & Planning",
-                        items: [
-                            { title: "Research Local Competitors", summary: "Identify all home care agencies serving Annapolis/Anne Arundel County. Analyze their services, pricing, reputation, strengths, and weaknesses to inform your positioning.", action: "Create competitor analysis spreadsheet with 10-15 agencies", timeline: "6-8 weeks before opening", duration: "42-56 days", cost: "Time investment" },
-                            { title: "Identify Service Gaps and Opportunities", summary: "Determine underserved niches in market such as specialized dementia care, post-hospitalization services, or specific geographic areas. Opportunities for differentiation.", action: "Interview referral sources about unmet needs", timeline: "4-6 weeks before opening", duration: "28-42 days", cost: "Time investment" },
-                            { title: "Analyze Competitor Pricing Strategies", summary: "Research competitive hourly rates for various service levels. Understand market pricing floor and ceiling to position your rates competitively while maintaining profitability.", action: "Secret shop competitors, analyze pricing structures", timeline: "4-6 weeks before opening", duration: "28-42 days", cost: "Time investment" },
-                            { title: "Review Competitor Marketing Approaches", summary: "Study how competitors market their services including websites, advertising, community presence, and messaging. Identify what works and gaps you can fill.", action: "Analyze competitor digital presence and marketing materials", timeline: "4-6 weeks before opening", duration: "28-42 days", cost: "Time investment" },
-                            { title: "Analyze Senior Population Demographics", summary: "Research Anne Arundel County senior population including age distribution, income levels, geographic concentration, and growth projections. Validates market opportunity.", action: "Review census data and Maryland Department of Aging reports", timeline: "During business planning phase", duration: "N/A (Included in planning)", cost: "Free public data" },
-                            { title: "Identify Hospital and Rehabilitation Centers", summary: "Map all hospitals, rehab centers, and skilled nursing facilities in territory. These are primary referral sources for post-hospitalization and transitional care.", action: "Create target list with contact information for discharge planners", timeline: "4 weeks before opening", duration: "28 days", cost: "Time investment" },
-                            { title: "Map Assisted Living Facility Relationships", summary: "Assisted living facilities often need home care for residents requiring extra support. Build partnerships to provide supplemental care services.", action: "List all AL facilities in territory, research partnerships", timeline: "4 weeks before opening", duration: "28 days", cost: "Time investment" },
-                            { title: "Identify Adult Day Care Centers", summary: "Adult day programs serve similar... [incomplete in source]", action: "List all adult day care centers in territory", timeline: "4 weeks before opening", duration: "28 days", cost: "Time investment" }
-                        ]
-                    },
-                    {
-                        name: "Marketing Implementation",
-                        items: [
-                            { title: "Complete Local SEO Setup (Google My Business)", summary: "Optimize your Google My Business profile for Annapolis. Critical for appearing in local search results and driving website traffic. Includes service areas, hours, and photos.", action: "Claim, verify, and fully optimize Google My Business listing", timeline: "3-4 weeks before opening", duration: "21-28 days", cost: "Free (Time investment)" },
-                            { title: "Launch Initial Paid Digital Advertising Campaign (Google/Facebook)", summary: "Run targeted ads to drive immediate leads in the Annapolis area. Focus on high-intent keywords (e.g., 'home care Annapolis').", action: "Develop ad creative, set budget ($500-1,000/month), launch campaigns", timeline: "2 weeks before opening", duration: "14 days", cost: "$500-1,000 initial budget" },
-                            { title: "Draft and Issue Press Release", summary: "Announce the opening of your new Comfort Keepers franchise in the Annapolis market. Send to local media outlets, business journals, and community newsletters.", action: "Write release, distribute to 5-10 local outlets", timeline: "2 weeks before opening", duration: "14 days", cost: "$0-500 for distribution service" },
-                            { title: "Develop Social Media Content Calendar", summary: "Plan regular posts for Facebook and Instagram focusing on community events, caregiving tips, and testimonials. Ensures consistent brand messaging.", action: "Create 30 days of content scheduled in advance", timeline: "1 week before opening", duration: "7 days", cost: "Time investment" },
-                            { title: "Order Promotional Swag and Leave-Behinds", summary: "Pens, sticky notes, small branded items to leave with referral sources and clients. Maintains brand visibility.", action: "Design and order initial stock of 3-5 promotional items", timeline: "3-4 weeks before opening", duration: "21-28 days", cost: "$500-1,000" },
-                            { title: "Install Google Analytics and Conversion Tracking", summary: "Monitor website traffic, source of visitors, and conversion rate. Essential for measuring marketing return on investment (ROI).", action: "Implement tracking code on website subdomain", timeline: "Before website launch", duration: "1 day", cost: "Free (Time investment)" }
-                        ]
-                    },
-                    {
-                        name: "Referral Network Development",
-                        items: [
-                            { title: "Create Referral Source Target List", summary: "Prioritized list of top potential referral sources (hospitals, physicians, geriatric attorneys, financial advisors). Focus marketing efforts on this list.", action: "Filter target list to top 20 contacts", timeline: "4 weeks before opening", duration: "28 days", cost: "Time investment" },
-                            { title: "Schedule Introductory Meetings with Top Hospitals", summary: "Meet with discharge planners and social workers at Anne Arundel Medical Center (AAMC) and other key hospitals to introduce services and drop off brochures.", action: "Call/email to schedule 5-10 introductory meetings", timeline: "2-4 weeks before opening", duration: "14-28 days", cost: "Time and travel" },
-                            { title: "Introduce Services to Geriatric Physicians", summary: "Target primary care physicians and geriatric specialists who frequently recommend home care to their patients. Establish credibility and trust.", action: "In-person visits and follow-up emails to 10-15 practices", timeline: "Ongoing, start 4 weeks before opening", duration: "N/A (Ongoing)", cost: "Time and travel" },
-                            { title: "Network with Elder Law Attorneys", summary: "Attorneys specializing in estate planning and elder law are key referral sources for high-value clients needing long-term care.", action: "Attend local bar association meetings, schedule one-on-one lunches", timeline: "Ongoing, start 4 weeks before opening", duration: "N/A (Ongoing)", cost: "$100-300 for networking meals" },
-                            { title: "Develop Relationships with Financial Advisors/Fiduciaries", summary: "Financial professionals help families manage the costs of care and are often the first point of contact when care decisions are needed.", action: "Identify local professionals, send introductory packets", timeline: "Ongoing, start 4 weeks before opening", duration: "N/A (Ongoing)", cost: "Time investment" },
-                            { title: "Host a 'Lunch and Learn' for Referral Sources", summary: "A small event hosting key referral sources at your office or a local venue. Educate them on your services and Comfort Keepers differentiation.", action: "Plan event for 10-15 guests, send invitations, develop presentation", timeline: "Within first 30 days of opening", duration: "30 days", cost: "$200-500 for catering/venue" }
-                        ]
-                    },
-                    {
-                        name: "Community Engagement",
-                        items: [
-                            { title: "Join Annapolis Chamber of Commerce", summary: "Membership provides networking opportunities, increases local business credibility, and offers marketing channels through chamber events and directories.", action: "Complete membership application and pay dues", timeline: "4 weeks before opening", duration: "28 days", cost: "$300-600 annual dues" },
-                            { title: "Sponsor a Local Senior Event/Activity", summary: "Sponsorship increases brand visibility within the target demographic (seniors and their families) and demonstrates commitment to the community.", action: "Identify and sponsor a senior center event or charity walk", timeline: "Ongoing, target 1 event per quarter", duration: "N/A (Ongoing)", cost: "$250-1,000 per sponsorship" },
-                            { title: "Host Educational Seminars for Seniors/Families", summary: "Topics like managing caregiver stress, or aging in place. Positions you as expert and generates leads.", action: "Develop topics, partner with venues, promote events", timeline: "Monthly starting month 2", duration: "N/A (Monthly)", cost: "$100-300 per event for refreshments and materials" },
-                            { title: "Participate in Health Fairs", summary: "Community health fairs attract seniors seeking health information and resources. Opportunity for face-to-face interaction and lead generation.", action: "Identify health fairs, register for booth space", timeline: "Ongoing, typically spring and fall events", duration: "N/A (Event Dependent)", cost: "$50-200 per event" },
-                            { title: "Volunteer with Local Senior Organizations", summary: "Volunteer time at Meals on Wheels, senior centers, or aging advocacy groups. Builds relationships, demonstrates values, and creates goodwill.", action: "Identify volunteer opportunities, commit time", timeline: "Ongoing starting month 2", duration: "N/A (Ongoing)", cost: "Time investment" }
-                        ]
-                    }
-                ]
-            },
+// ═══════════════════════════════════════════════════════════════════════
+// COMPUTED
+// ═══════════════════════════════════════════════════════════════════════
+function getStats(){
+  const c={not_started:0,in_progress:0,complete:0,blocked:0,na:0};
+  ALL_ITEMS.forEach(i=>{c[statuses[i.id]||"not_started"]++});return c;
+}
+function getPhaseStats(p){
+  const items=p.sub_phases.flatMap(sp=>sp.items);const t=items.length;
+  const complete=items.filter(i=>statuses[i.id]==="complete").length;
+  const blocked=items.filter(i=>statuses[i.id]==="blocked").length;
+  const inProg=items.filter(i=>statuses[i.id]==="in_progress").length;
+  return{total:t,complete,blocked,inProgress:inProg,pct:t?Math.round(complete/t*100):0};
+}
 
-            // PHASE 5: FINANCIAL MANAGEMENT
-            {
-                phase: "Phase 5: Financial Management",
-                sub_phases: [
-                    {
-                        name: "Budget & Projections",
-                        items: [
-                            { title: "Review Initial Franchise Fee Payment", summary: "$59,950 franchise fee covers franchise rights, initial training, operations manuals, and initial support.", action: "Verify payment was processed and receipt filed", timeline: "Immediately upon signing agreement", duration: "1 day", cost: "Initial franchise fee $59,950 (Paid)" },
-                            { title: "Finalize Startup Budget and Capital Allocation", summary: "Detailed budget covering all pre-opening costs: fees, insurance, office setup, salaries, and initial marketing spend. Ensures capital is allocated correctly.", action: "Create final spreadsheet from FDD estimates, finalize funding access", timeline: "Before opening", duration: "7 days", cost: "Included in business plan" }
-                        ]
-                    },
-                    {
-                        name: "Financial Tracking Systems",
-                        items: [
-                            { title: "Set Up Business Bank Accounts", summary: "Separate checking and savings accounts for business use. Essential for liability protection and tax compliance. Should be set up immediately after entity formation.", action: "Open accounts with local commercial bank using EIN and formation documents", timeline: "Within 7 days of EIN receipt", duration: "7 days", cost: "Minimal fees" },
-                            { title: "Implement Accounting Software (QuickBooks or similar)", summary: "System for managing accounts receivable, accounts payable, payroll, and financial reporting. Critical for monitoring profitability and tax compliance.", action: "Purchase software, set up chart of accounts (franchise standard), integrate with bank accounts.", timeline: "Before opening", duration: "7 days", cost: "$50-150/month subscription" },
-                            { title: "Create Cash Flow Forecasting System", summary: "System for managing accounts receivable, accounts payable, and cash position. Prevents cash shortfalls that could threaten business.", action: "Create cash flow forecasting spreadsheet", timeline: "Before opening", duration: "1 day", cost: "Time investment" },
-                            { title: "Create Budget vs. Actual Monitoring", summary: "Compare actual financial performance to budget projections monthly. Identifies variances and enables corrective action.", action: "Create budget comparison reports", timeline: "Monthly starting first month", duration: "N/A (Monthly)", cost: "Time investment" },
-                            { title: "Establish Key Performance Indicators (KPIs) Tracking", summary: "Dashboard tracking critical business metrics like revenue per client, caregiver utilization, gross margin, and client retention. Enables data-driven management.", action: "Create KPI dashboard in Excel or operations software", timeline: "Launch at opening", duration: "1 day", cost: "Time investment" }
-                        ]
-                    },
-                    {
-                        name: "Pricing & Revenue",
-                        items: [
-                            { title: "Conduct Competitive Rate Analysis", summary: "Research what competitors charge for various service levels in Annapolis market. Ensures your pricing is competitive while maintaining profitability.", action: "Secret shop competitors and compile pricing data", timeline: "4-6 weeks before opening", duration: "28-42 days", cost: "Time investment" },
-                            { title: "Establish Final Rate Sheet and Pricing Structure", summary: "Document final pricing for all services (hourly, live-in, specialty care) based on competitive analysis and desired margin. Share with staff.", action: "Finalize rate sheet and print materials", timeline: "2 weeks before opening", duration: "14 days", cost: "Included in planning" },
-                            { title: "Set Up Fee Schedule for Client Assessments", summary: "Determine if there is a fee for the initial in-home assessments. Standard industry practice and critical for understanding client needs and closing sales.", action: "Create assessment scheduling procedures", timeline: "Before first inquiry", duration: "1 day", cost: "Time investment for assessments" },
-                            { title: "Develop Care Needs Assessment Tools", summary: "Comprehensive assessment forms evaluating physical, cognitive, social, and environmental needs. Foundation for care plan development.", action: "Customize Comfort Keepers assessment tools", timeline: "Before first assessment", duration: "1 day", cost: "Forms included in franchise materials" },
-                            { title: "Create Service Agreement Templates", summary: "Legally reviewed contracts defining services, rates, payment terms, cancellation policies, and responsibilities. Protects both parties.", action: "Have attorney review service agreement template", timeline: "Before first client", duration: "1 day", cost: "Legal review $300-500" },
-                            { title: "Develop Client Onboarding Checklist", summary: "Step-by-step process for new client setup including paperwork, caregiver matching, schedule coordination, and first visit preparation.", action: "Create checklist and train staff on process", timeline: "Before first client", duration: "1 day", cost: "Included in operations development" },
-                            { title: "Establish Family Communication Procedures", summary: "Regular communication with family members through scheduled calls, care notes, and updates. Keeps families informed and builds trust.", action: "Create family communication schedule and documentation system", timeline: "Before first client", duration: "1day", cost: "Included in operations" }
-                        ]
-                    }
-                ]
-            },
+// ═══════════════════════════════════════════════════════════════════════
+// RENDER SIDEBAR
+// ═══════════════════════════════════════════════════════════════════════
+function renderSidebar(){
+  const stats=getStats();
+  const pct=TOTAL?Math.round(stats.complete/TOTAL*100):0;
+  let h=`<div class="sidebar-brand"><div class="brand-row"><div class="brand-icon">CK</div><div><div class="brand-name">COMFORT KEEPERS</div><div class="brand-sub">Annapolis, MD — Launch Tracker</div></div></div>
+  <div class="sidebar-progress"><div class="row"><span>Overall Progress</span><span class="pct">${pct}%</span></div><div class="bar-track"><div class="bar-fill bar-fill-gold" style="width:${pct}%"></div></div><div class="stats"><span>${stats.complete} of ${TOTAL} items</span><span class="blocked">${stats.blocked} blocked</span></div></div></div>`;
+  h+=`<div class="sidebar-nav"><button class="nav-btn ${activePhase==="dashboard"?"active":""}" onclick="setPhase('dashboard')"><div class="nav-row"><span class="icon">📊</span><span class="label">Dashboard</span></div></button>`;
+  PHASES.forEach(p=>{
+    const ps=getPhaseStats(p);const shortName=p.phase.replace(/Phase \d+ — /,"");
+    h+=`<button class="nav-btn ${activePhase===p.id?"active":""}" onclick="setPhase('${p.id}')"><div class="nav-row"><span class="icon">${p.icon}</span><span class="label">${shortName}</span></div><div class="mini-bar"><div class="bar-track"><div class="bar-fill" style="width:${ps.pct}%;background:${ps.pct===100?"#2D9F56":"#C8A951"}"></div></div><span class="count">${ps.complete}/${ps.total}</span></div></button>`;
+  });
+  h+=`</div><div class="sidebar-footer">Target Opening: <span>May 30, 2026</span><br>${TOTAL} total items</div>`;
+  document.getElementById("sidebar").innerHTML=h;
+}
 
-            // PHASE 6: OPERATIONS LAUNCH (First 90 Days)
-            {
-                phase: "Phase 6: Operations Launch (First 90 Days)",
-                sub_phases: [
-                    {
-                        name: "Client Services Setup",
-                        items: [
-                            { title: "Establish System for Caregiver-Client Matching", summary: "Systematic process for matching caregiver skills, personality, and availability to client needs and preferences to maximize compatibility and retention.", action: "Document matching criteria and train care coordinator", timeline: "Before first client", duration: "1 day", cost: "Included in operations manual" },
-                            { title: "Finalize Backup Caregiver Protocols", summary: "Clear procedures for finding a replacement caregiver in case of illness, emergency, or no-show. Essential for client safety and reliability.", action: "Create on-call schedule and emergency contact list", timeline: "Before first client", duration: "1 day", cost: "Included in operations manual" },
-                            { title: "Set Up Client Billing and Invoicing Cycle", summary: "Determine billing frequency (weekly/bi-weekly), set up automated invoicing in ClearCare, and define payment collection policies.", action: "Configure ClearCare billing module, train staff on invoicing process", timeline: "Before first client", duration: "1 day", cost: "Included in software setup" },
-                            { title: "Implement Payroll Processing System", summary: "System for accurately calculating caregiver hours (from EVV), deducting taxes, and issuing paychecks/direct deposits compliant with Maryland laws.", action: "Integrate ClearCare with payroll provider (e.g., QuickBooks Payroll or ADP)", timeline: "Before first caregiver payday", duration: "7 days", cost: "$50-100/month service fee" }
-                        ]
-                    },
-                    {
-                        name: "Quality Assurance & Continuous Improvement",
-                        items: [
-                            { title: "Implement Weekly Caregiver Check-ins", summary: "Regular contact with caregivers to address concerns, provide support, gather feedback, and ensure job satisfaction. Improves retention and quality.", action: "Schedule weekly check-in calls or meetings", timeline: "Launch with first caregivers", duration: "1 day", cost: "Time investment" },
-                            { title: "Establish Monthly Client Satisfaction Calls", summary: "Proactive outreach to clients and families to assess satisfaction, identify issues early, and demonstrate commitment to quality.", action: "Create satisfaction call script and tracking system", timeline: "Launch with first clients", duration: "1 day", cost: "Time investment" },
-                            { title: "Schedule Quarterly Care Plan Reviews", summary: "Formal review of care plans every 90 days to assess changing needs, adjust services, and ensure continued appropriateness of care.", action: "Develop 90-day review calendar and forms", timeline: "Every 90 days", duration: "N/A (Recurring)", cost: "Time investment" },
-                            { title: "Conduct Initial Supervisory Visits", summary: "Unannounced supervisory visits to client homes during care delivery to observe caregiver performance and ensure quality standards.", action: "Schedule supervisor visit calendar (e.g., within first 30 days of service)", timeline: "Ongoing starting with first clients", duration: "N/A (Ongoing)", cost: "Supervisor time" },
-                            { title: "Establish Incident Investigation Procedures", summary: "Formal process for investigating accidents, complaints, or quality concerns including root cause analysis and corrective action plans.", action: "Create incident investigation protocol", timeline: "Before first client", duration: "1 day", cost: "Included in policy development" },
-                            { title: "Implement Client Feedback Collection and Review", summary: "Systematic gathering of client and family feedback through surveys, calls, and informal conversations. Use to identify improvement opportunities.", action: "Create feedback collection and analysis process", timeline: "Ongoing from opening", duration: "N/A (Ongoing)", cost: "Survey tools included in CRM" },
-                            { title: "Conduct Caregiver Performance Evaluations", summary: "Formal performance reviews every 6-12 months evaluating skills, reliability, client satisfaction, and professional development needs.", action: "Create evaluation forms and schedule (e.g., 90 days and 6 months after hire)", timeline: "90 days and 6 months after hire", duration: "N/A (Milestone)", cost: "Time investment" },
-                            { title: "Develop Ongoing Training and Continuing Education Plan", summary: "Schedule regular in-service training for caregivers on new topics, skill refreshers, and franchise updates. Required for compliance and quality.", action: "Create monthly training calendar", timeline: "Monthly after launch", duration: "N/A (Monthly)", cost: "Time investment" }
-                        ]
-                    },
-                    {
-                        name: "Key Performance Indicator (KPI) Tracking",
-                        items: [
-                            { title: "Track Caregiver Retention Rate", summary: "Percentage of caregivers retained over a period (e.g., 90 days, 1 year). High retention is critical for quality and cost control.", action: "Calculate monthly retention rate", timeline: "Monthly starting month 1", duration: "N/A (Monthly)", cost: "Time investment" },
-                            { title: "Monitor Client Retention Rate", summary: "Percentage of clients retained over a period. Indicates client satisfaction and business health.", action: "Calculate monthly client retention rate", timeline: "Monthly starting month 1", duration: "N/A (Monthly)", cost: "Time investment" },
-                            { title: "Monitor Client Satisfaction Score (CSAT/NPS)", summary: "Overall score from client surveys measuring client experience. Target: 4.5+ out of 5.0.", action: "Review survey results in CRM, address specific complaints, improve caregiver training", timeline: "Ongoing from opening", duration: "N/A (Ongoing)", cost: "Included in CRM" },
-                            { title: "Track Lead Generation Rate", summary: "Number of new inquiries per month from all sources. Measures marketing effectiveness and brand awareness. Target: 20-30 qualified inquiries per month initially.", action: "Track leads in CRM, increase marketing spend if missing target", timeline: "Monthly starting month 1", duration: "N/A (Monthly)", cost: "Included in CRM" },
-                            { title: "Calculate Inquiry to Client Conversion Rate", summary: "Percentage of inquiries that become paying clients. Measures sales effectiveness and service appeal. Target: 30-40% conversion rate.", action: "Review CRM reporting on inquiry outcomes, improve sales process/response time", timeline: "Monthly starting month 1", duration: "N/A (Monthly)", cost: "Included in CRM" },
-                            { title: "Measure Cost Per Acquisition", summary: "Total marketing costs divided by number of new clients acquired. Determines marketing ROI and sustainability. Target: Under $500 per new client.", action: "Track marketing expenses vs. new clients, optimize spend, focus on referrals", timeline: "Monthly starting month 1", duration: "N/A (Monthly)", cost: "Time investment" },
-                            { title: "Track Referral Source Productivity", summary: "Number of clients referred by each referral source category. Identifies most valuable relationships. Target: Top 10 sources generate 50%+ of clients.", action: "Review referral source field in CRM, nurture top sources", timeline: "Monthly starting month 1", duration: "N/A (Monthly)", cost: "Included in CRM" },
-                            { title: "Monitor Website Traffic and Engagement", summary: "Monthly website visitors, page views, and time on site. Indicates online presence strength. Target: 200+ visitors per month, 2+ min time on site.", action: "Review Google Analytics, improve SEO/content marketing", timeline: "Monthly starting month 1", duration: "N/A (Monthly)", cost: "Time investment" },
-                            { title: "Track Online Review Ratings and Quantity", summary: "Average star rating and number of reviews on Google, Facebook, and other platforms. Critical trust factor. Target: 4.8+ stars, 20+ reviews within first year.", action: "Implement systematic review requests, address all negative feedback", timeline: "Ongoing from opening", duration: "N/A (Ongoing)", cost: "Time investment" }
-                        ]
-                    }
-                ]
-            }
-        ];
+// ═══════════════════════════════════════════════════════════════════════
+// RENDER DASHBOARD
+// ═══════════════════════════════════════════════════════════════════════
+function renderDashboard(){
+  const stats=getStats();const pct=TOTAL?Math.round(stats.complete/TOTAL*100):0;
+  const actionable=TOTAL-stats.na;const pctAct=actionable?Math.round(stats.complete/actionable*100):0;
+  const blocked=ALL_ITEMS.filter(i=>statuses[i.id]==="blocked");
+  const inProg=ALL_ITEMS.filter(i=>statuses[i.id]==="in_progress");
+  let h=`<div class="main-inner"><h1 class="page-title">Launch Dashboard</h1><p class="page-sub">Comfort Keepers of Annapolis</p>`;
+  // KPIs
+  const kpis=[{l:"Total Items",v:TOTAL,c:"#8FA3B8",bg:"#132A44"},{l:"Complete",v:stats.complete,c:"#2D9F56",bg:"rgba(45,159,86,.08)"},{l:"In Progress",v:stats.in_progress,c:"#D4870E",bg:"rgba(212,135,14,.08)"},{l:"Blocked",v:stats.blocked,c:"#C53030",bg:"rgba(197,48,48,.08)"},{l:"Not Started",v:stats.not_started,c:"#8B95A5",bg:"rgba(139,149,165,.08)"}];
+  h+=`<div class="kpi-grid">`;kpis.forEach(k=>{h+=`<div class="kpi-card" style="background:${k.bg};border-color:${k.c}22"><div class="kpi-label">${k.l}</div><div class="kpi-value" style="color:${k.c}">${k.v}</div></div>`});h+=`</div>`;
+  // Overall bar
+  h+=`<div class="overall-box"><div class="overall-header"><div><span class="title">Overall Completion</span><span class="sub">${stats.complete} of ${TOTAL} total · ${pctAct}% of actionable items</span></div><span class="big-pct">${pct}%</span></div><div class="overall-bar"><div class="fill" style="width:${pct}%"></div></div>`;
+  h+=`<div class="phase-mini-grid">`;PHASES.forEach(p=>{const ps=getPhaseStats(p);const sn=p.phase.replace(/Phase \d+ — /,"");h+=`<button class="phase-mini" onclick="setPhase('${p.id}')"><div class="pm-label">${p.icon} ${sn}</div><div class="bar-track"><div class="bar-fill" style="width:${ps.pct}%;background:${ps.pct===100?"#2D9F56":ps.blocked>0?"#C53030":"#C8A951"}"></div></div><div class="pm-pct" style="color:${ps.pct===100?"#2D9F56":"#6B7F94"}">${ps.pct}%</div></button>`});
+  h+=`</div></div>`;
+  // Blocked + In Progress
+  h+=`<div class="two-col"><div class="alert-box" style="background:rgba(197,48,48,.06);border:1px solid rgba(197,48,48,.15)"><h3 style="color:#C53030">🚨 Blocked Items (${blocked.length})</h3>`;
+  if(!blocked.length)h+=`<p class="empty">No blocked items — great!</p>`;
+  else{h+=`<div class="alert-list">`;blocked.forEach(i=>{h+=`<div class="alert-item" style="background:rgba(197,48,48,.08)"><div class="ai-title" style="color:#F0B0B0">${i.title}</div><div class="ai-sub" style="color:#8B6060">${i.summary.slice(0,120)}…</div></div>`});h+=`</div>`}
+  h+=`</div><div class="alert-box" style="background:rgba(212,135,14,.06);border:1px solid rgba(212,135,14,.15)"><h3 style="color:#D4870E">🔄 In Progress (${inProg.length})</h3>`;
+  if(!inProg.length)h+=`<p class="empty">Nothing currently in progress.</p>`;
+  else{h+=`<div class="alert-list">`;inProg.forEach(i=>{h+=`<div class="alert-item" style="background:rgba(212,135,14,.08)"><div class="ai-title" style="color:#F0D898">${i.title}</div><div class="ai-sub" style="color:#8B7740">${i.summary.slice(0,120)}…</div></div>`});h+=`</div>`}
+  h+=`</div></div>`;
+  // Vendor grid
+  const vendors=[
+    {name:"Viv",desc:"Care Management",ids:["1-4-1","1-4-2","1-4-3","1-4-4"]},
+    {name:"Viventium",desc:"Payroll & HR",ids:["1-4-5","1-4-6","6-1-5"]},
+    {name:"CareAcademy",desc:"LMS / Training",ids:["1-4-7","1-4-8","1-4-9"]},
+    {name:"Vita Health",desc:"TB & Screenings",ids:["4-1-1"]},
+    {name:"Human Interest",desc:"401(k)",ids:["4-1-2","4-1-3"]},
+    {name:"CPA Services",desc:"Tax & Accounting",ids:["4-1-4","4-1-5","4-1-6"]},
+    {name:"CK Central/Box",desc:"Doc Submission",ids:["1-4-10"]},
+    {name:"PDHA Cert",desc:"National Alliance",ids:["4-2-1","4-2-2"]},
+  ];
+  h+=`<div class="vendor-box"><h3>Platform & Vendor Status</h3><div class="vendor-grid">`;
+  vendors.forEach(v=>{const done=v.ids.filter(id=>statuses[id]==="complete").length;const t=v.ids.length;const allDone=done===t;const hasBlk=v.ids.some(id=>statuses[id]==="blocked");
+    h+=`<div class="vendor-card" style="background:${allDone?"rgba(45,159,86,.08)":hasBlk?"rgba(197,48,48,.08)":"#0F2540"};border-color:${allDone?"rgba(45,159,86,.2)":hasBlk?"rgba(197,48,48,.2)":"#1A3049"}"><div class="vc-name" style="color:${allDone?"#2D9F56":"#E8ECF1"}">${v.name}</div><div class="vc-desc">${v.desc}</div><div class="vc-bar"><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${t?Math.round(done/t*100):0}%;background:${allDone?"#2D9F56":"#C8A951"}"></div></div><span class="count">${done}/${t}</span></div></div>`});
+  h+=`</div></div></div>`;
+  document.getElementById("main").innerHTML=h;
+}
 
+// ═══════════════════════════════════════════════════════════════════════
+// RENDER PHASE VIEW
+// ═══════════════════════════════════════════════════════════════════════
+function renderPhaseView(){
+  const phase=PHASES.find(p=>p.id===activePhase);if(!phase)return;
+  const ps=getPhaseStats(phase);const q=searchText.toLowerCase();
+  let h=`<div class="main-inner"><h1 class="page-title">${phase.icon} ${phase.phase}</h1><div class="phase-progress"><div class="bar-track"><div class="bar-fill bar-fill-gold" style="width:${ps.pct}%"></div></div><span class="pp-label">${ps.complete}/${ps.total} complete</span></div>`;
+  h+=`<div class="phase-controls"><input type="text" placeholder="Search items…" value="${searchText}" oninput="searchText=this.value;render()"><select onchange="filterStatus=this.value;render()"><option value="all"${filterStatus==="all"?" selected":""}>All Statuses</option>`;
+  STATUSES.forEach(s=>{h+=`<option value="${s}"${filterStatus===s?" selected":""}>${STATUS_META[s].label}</option>`});h+=`</select></div>`;
+  phase.sub_phases.forEach((sp,si)=>{
+    const key=phase.id+"-"+si;const isOpen=expandedSubs[key]!==false;
+    const filtered=sp.items.filter(item=>{
+      const sm=filterStatus==="all"||(statuses[item.id]||"not_started")===filterStatus;
+      const sq=!q||item.title.toLowerCase().includes(q)||item.summary.toLowerCase().includes(q);return sm&&sq;
+    });
+    if(!filtered.length)return;
+    h+=`<button class="sub-header ${isOpen?"open":"closed"}" onclick="toggleSub('${key}')"><div class="sh-left"><div class="sh-bar"></div><span>${sp.name}</span><span class="sh-count">(${filtered.length} items)</span></div><span class="sh-arrow">▼</span></button>`;
+    if(isOpen){
+      h+=`<div class="sub-body">`;
+      filtered.forEach(item=>{
+        const s=statuses[item.id]||"not_started";const m=STATUS_META[s];const note=notes[item.id]||"";const isEd=editingNote===item.id;
+        h+=`<div class="item-row s-${s}"><div><select class="status-select ss-${s}" onchange="setItemStatus('${item.id}',this.value)">`;
+        STATUSES.forEach(st=>{h+=`<option value="${st}"${s===st?" selected":""}>${STATUS_META[st].icon} ${STATUS_META[st].label}</option>`});
+        h+=`</select></div><div class="item-content"><div class="item-title ${s==="complete"?"done":""} ${s==="na"?"na":""}">${item.title}</div><div class="item-summary">${item.summary}</div><div class="item-meta"><span>⏱ ${item.timeline}</span><span>💵 ${item.cost}</span></div><div class="item-action"><strong>Action:</strong> ${item.action}</div>`;
+        if(note&&!isEd)h+=`<div class="item-note" onclick="startEditNote('${item.id}')">📝 ${note}</div>`;
+        if(isEd)h+=`<div class="note-edit"><input id="note-input-${item.id}" value="${(note||"").replace(/"/g,"&quot;")}" placeholder="Add a note…" onkeydown="if(event.key==='Enter')saveNote('${item.id}')"><button class="btn-save" onclick="saveNote('${item.id}')">Save</button><button class="btn-cancel" onclick="editingNote=null;render()">Cancel</button></div>`;
+        if(!note&&!isEd)h+=`<button class="btn-add-note" onclick="startEditNote('${item.id}')">+ Add note</button>`;
+        h+=`</div></div>`;
+      });
+      h+=`</div>`;
+    }
+  });
+  h+=`</div>`;document.getElementById("main").innerHTML=h;
+  if(editingNote){const inp=document.getElementById("note-input-"+editingNote);if(inp)inp.focus()}
+}
 
-        // --- 2. LOCALSTORAGE & APP SETUP ---
-        
-        // Get or create a persistent User ID from localStorage
-        let currentUserId = localStorage.getItem('comfortKeepersUserId');
-        if (!currentUserId) {
-            currentUserId = crypto.randomUUID();
-            localStorage.setItem('comfortKeepersUserId', currentUserId);
-        }
-        document.getElementById('user-id').textContent = currentUserId;
+// ═══════════════════════════════════════════════════════════════════════
+// ACTIONS
+// ═══════════════════════════════════════════════════════════════════════
+function setPhase(id){activePhase=id;searchText="";filterStatus="all";editingNote=null;render()}
+function toggleSub(key){expandedSubs[key]=expandedSubs[key]===false?true:false;render()}
+function setItemStatus(id,val){statuses[id]=val;saveState();render()}
+function startEditNote(id){editingNote=id;render()}
+function saveNote(id){const inp=document.getElementById("note-input-"+id);if(inp)notes[id]=inp.value;editingNote=null;saveState();render()}
 
-        // Define the unique key for this user's checklist data
-        const LOCAL_STORAGE_KEY = `comfortKeepersChecklist_${currentUserId}`;
+function render(){renderSidebar();if(activePhase==="dashboard")renderDashboard();else renderPhaseView()}
 
-        let completedTasksMap = {}; // Maps item index to boolean completion status
-        let totalTasksCount = 0;
-
-        /**
-         * Calculates the total number of tasks in the master data structure.
-         */
-        function calculateTotalTasks() {
-            let count = 0;
-            CHECKLIST_DATA.forEach(phase => {
-                phase.sub_phases.forEach(subPhase => {
-                    count += subPhase.items.length;
-                });
-            });
-            totalTasksCount = count;
-            document.getElementById('total-actions').textContent = count;
-            document.getElementById('total-tasks-display').textContent = count;
-        }
-        
-        /**
-         * Loads the checklist data from localStorage.
-         */
-        function loadChecklistFromStorage() {
-            const loadingMessage = document.getElementById('loading-message');
-            if (loadingMessage) {
-                loadingMessage.style.display = 'none';
-            }
-
-            try {
-                // Try to load saved data from localStorage
-                const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
-                if (storedData) {
-                    completedTasksMap = JSON.parse(storedData) || {};
-                } else {
-                    completedTasksMap = {};
-                }
-            } catch (error) {
-                console.error("Error loading data from localStorage:", error);
-                completedTasksMap = {};
-            }
-            
-            // Render the checklist with the loaded data
-            renderChecklist(completedTasksMap);
-        }
-
-        /**
-         * Renders the HTML checklist based on the master data and the completion map.
-         * @param {Object} completionMap - Map of task index to completion status (e.g., { '1': true, '5': false })
-         */
-        function renderChecklist(completionMap) {
-            let html = '';
-            let itemCounter = 0;
-            let completedCount = 0;
-
-            CHECKLIST_DATA.forEach((phaseData, phaseIndex) => {
-                // Phase Header Card
-                html += `<div class="phase-card">`;
-                html += `<div class="phase-header" data-toggle="phase-body-${phaseIndex}">`;
-                html += `<span class="phase-title">${phaseData.phase}</span>`;
-                html += `<span>&#x25BC;</span>`;
-                html += `</div>`;
-                html += `<div class="phase-body" id="phase-body-${phaseIndex}">`;
-
-                phaseData.sub_phases.forEach(subPhaseData => {
-                    // Sub-Phase Header
-                    html += `<div class="sub-phase-header">${subPhaseData.name}</div>`;
-
-                    // Checklist Table for Sub-Phase
-                    html += `<table class="checklist-table">`;
-                    html += `<thead><tr>`;
-                    html += `<th style="width: 30px;">#</th>`;
-                    html += `<th style="width: 30px;">Done</th>`;
-                    html += `<th>Action Item & Summary</th>`;
-                    html += `<th style="width: 15%;">Timeline (Duration)</th>`;
-                    html += `<th class="cost-col" style="width: 15%;">Est. Cost</th>`;
-                    html += `</tr></thead>`;
-                    html += `<tbody>`;
-
-                    subPhaseData.items.forEach(item => {
-                        itemCounter++;
-                        const taskId = String(itemCounter);
-                        const isCompleted = completionMap[taskId] === true;
-
-                        if (isCompleted) {
-                            completedCount++;
-                        }
-
-                        html += `<tr data-task-id="${taskId}" class="${isCompleted ? 'completed-row' : ''}">`;
-
-                        // Item Index
-                        html += `<td data-label="#">${taskId}</td>`;
-
-                        // Checkbox
-                        html += `<td data-label="Done">`;
-                        html += `<input type="checkbox" id="task-${taskId}" data-task-id="${taskId}" ${isCompleted ? 'checked' : ''} onchange="window.toggleTask(this)">`;
-                        html += `</td>`;
-
-                        // Item Title & Summary
-                        html += `<td data-label="Item">`;
-                        html += `<span class="item-title">${item.title}</span>`;
-                        html += `<span class="summary-text"><strong>Summary:</strong> ${item.summary} <br><strong>Action:</strong> ${item.action}</span>`;
-                        html += `</td>`;
-
-                        // Timeline / Duration
-                        html += `<td data-label="Timeline">`;
-                        html += `${item.timeline} <br> (${item.duration})`;
-                        html += `</td>`;
-
-                        // Est. Cost
-                        html += `<td data-label="Est. Cost" class="cost-col">`;
-                        html += `${item.cost}`;
-                        html += `</td>`;
-
-                        html += `</tr>`;
-                    });
-
-                    html += `</tbody></table>`;
-                });
-
-                html += `</div></div>`; // Close phase-body and phase-card
-            });
-
-            document.getElementById('checklist-container').innerHTML = html;
-            updateProgress(completedCount);
-
-            // Add event listeners for collapse/expand
-            document.querySelectorAll('.phase-header').forEach(header => {
-                header.removeEventListener('click', togglePhase); // Remove existing to prevent duplication
-                header.addEventListener('click', togglePhase);
-            });
-            // Initial state: hide all bodies except the first one
-            document.querySelectorAll('.phase-body').forEach((body, index) => {
-                if (index > 0) {
-                     body.style.display = 'none';
-                } else {
-                    const header = document.querySelector('.phase-header');
-                    if (header) {
-                         header.querySelector('span:last-child').innerHTML = '&#x25B2;';
-                    }
-                }
-            });
-        }
-
-        /**
-         * Toggles the visibility of a phase's body.
-         */
-        function togglePhase() {
-            const targetId = this.getAttribute('data-toggle');
-            const targetBody = document.getElementById(targetId);
-            if (targetBody.style.display === 'none' || targetBody.style.display === '') {
-                targetBody.style.display = 'block';
-                this.querySelector('span:last-child').innerHTML = '&#x25B2;'; // Up arrow
-            } else {
-                targetBody.style.display = 'none';
-                this.querySelector('span:last-child').innerHTML = '&#x25BC;'; // Down arrow
-            }
-        }
-
-
-        /**
-         * Updates the progress counter and bar.
-         * @param {number} completedCount - The number of completed tasks.
-         */
-        function updateProgress(completedCount) {
-            const percentage = totalTasksCount > 0 ? ((completedCount / totalTasksCount) * 100).toFixed(1) : 0;
-            document.getElementById('completed-count').textContent = completedCount;
-            const progressBar = document.getElementById('progress-bar');
-            progressBar.style.width = `${percentage}%`;
-            progressBar.textContent = `${percentage}%`;
-            if (percentage < 10) {
-                progressBar.style.textAlign = 'left';
-                progressBar.style.paddingLeft = '10px';
-                progressBar.style.paddingRight = '0';
-            } else {
-                progressBar.style.textAlign = 'right';
-                progressBar.style.paddingLeft = '0';
-                progressBar.style.paddingRight = '10px';
-            }
-        }
-
-        /**
-         * Handles checkbox change and saves the state to localStorage.
-         * @param {HTMLInputElement} checkbox - The checkbox element that triggered the change.
-         */
-        window.toggleTask = async function(checkbox) {
-            const taskId = checkbox.getAttribute('data-task-id');
-            const isChecked = checkbox.checked;
-            const row = checkbox.closest('tr');
-
-            // 1. Update the local map
-            const newMap = { ...completedTasksMap };
-            if (isChecked) {
-                newMap[taskId] = true;
-                row.classList.add('completed-row');
-            } else {
-                delete newMap[taskId]; // Only store 'true' values
-                row.classList.remove('completed-row');
-            }
-            completedTasksMap = newMap;
-
-            // 2. Save to localStorage
-            try {
-                localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(completedTasksMap));
-                
-                // Manually update progress since there's no onSnapshot listener
-                const completedCount = Object.keys(completedTasksMap).length;
-                updateProgress(completedCount);
-
-            } catch (error) {
-                console.error("Error saving to localStorage:", error);
-                // Optionally revert checkbox state if save fails
-                checkbox.checked = !isChecked;
-                row.classList.toggle('completed-row');
-            }
-        };
-
-        // --- 3. INITIALIZE APP ---
-        calculateTotalTasks();
-        loadChecklistFromStorage(); // Start the app by loading data
-
-    </script>
-
+// ═══════════════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════════════
+(async function(){await loadState();render()})();
+</script>
 </body>
 </html>
-
-
