@@ -593,7 +593,7 @@ const STANDARDS = [
 {id:"std-g-17",text:"Collect all data required for royalties and CKFI reporting, verify accuracy, and submit on time; ensure client agreements and plans of care are stored and accessible in the required way."},
 {id:"std-g-18",text:"Monitor key KPIs tied to minimum performance standards for your office (hours, revenue, caregiver utilization) and work with the owner on business plans if you fall short."},
 ]},
-{role:"Homecare Providers",icon:"💚",color:"#2D9F56",items:[
+{role:"Caregivers",icon:"💚",color:"#2D9F56",items:[
 {id:"std-h-1",text:"Complete office-specific onboarding before working independently: office orientation, Comfort Keepers mission and expectations, skills/competency validation, and assigned online courses."},
 {id:"std-h-2",text:"Stay current on all required ongoing and annual training (including HIPAA, safety, infection control, and cybersecurity), plus any Maryland or payer-specific modules you are assigned."},
 {id:"std-h-3",text:"Cooperate with required background checks and any periodic rechecks or health screens; promptly provide any documentation requested by the office."},
@@ -745,7 +745,7 @@ function renderPhaseView(){
 function renderStandards(){
   const rolesToShow=stdActiveRole==="all"?STANDARDS:STANDARDS.filter(r=>r.role===stdActiveRole);
 
-  let h=`<div class="main-inner"><div class="dash-header-row"><div><h1 class="page-title">📜 CKFI Minimum Standards Checklist</h1><p class="page-sub">Franchise Owner · General Manager · Homecare Providers</p></div></div>`;
+  let h=`<div class="main-inner"><div class="dash-header-row"><div><h1 class="page-title">📜 CKFI Minimum Standards Checklist</h1><p class="page-sub">Franchise Owner · General Manager · Caregivers</p></div></div>`;
 
   // Summary bar
   h+=`<div class="std-summary-bar">`;
