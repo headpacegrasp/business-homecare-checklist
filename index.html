@@ -139,29 +139,29 @@ h1.page-title{font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:
 
 /* Standards Checklist View */
 .std-role-section{margin-bottom:28px}
-.std-role-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--navy5)}
+.std-role-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--navy5)}
 .std-role-header .role-icon{font-size:24px}
 .std-role-header .role-name{font-size:18px;font-weight:700}
-.std-role-header .role-count{font-size:12px;color:var(--gray);margin-left:auto}
-.std-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-radius:8px;margin-bottom:8px;border:1px solid rgba(45,159,86,.12);background:rgba(45,159,86,.03)}
-.std-item.std-complete{background:rgba(45,159,86,.03);border-color:rgba(45,159,86,.12)}
+.std-role-header .role-count{font-size:12px;color:var(--gray-light);margin-left:auto}
+.std-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-radius:8px;margin-bottom:8px;border:1px solid rgba(45,159,86,.28);background:rgba(45,159,86,.08)}
+.std-item.std-complete{background:rgba(45,159,86,.08);border-color:rgba(45,159,86,.28)}
 .std-item.std-na{opacity:.5}
-.std-checkbox{width:22px;height:22px;min-width:22px;border-radius:5px;border:2px solid var(--green-bright);display:flex;align-items:center;justify-content:center;font-size:13px;margin-top:1px;background:var(--green-bright);color:#fff;user-select:none}
+.std-checkbox{width:22px;height:22px;min-width:22px;border-radius:5px;border:2px solid var(--green-bright);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-top:1px;background:var(--green-bright);color:#fff;user-select:none;box-shadow:0 0 6px rgba(45,159,86,.3)}
 .std-checkbox:hover{border-color:var(--green-bright)}
 .std-checkbox.checked{background:var(--green-bright);border-color:var(--green-bright);color:#fff}
-.std-text{font-size:12.5px;line-height:1.55;color:var(--text);flex:1}
-.std-summary-bar{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding:14px 18px;background:var(--navy4);border-radius:10px;border:1px solid var(--navy5);flex-wrap:wrap}
+.std-text{font-size:12.5px;line-height:1.55;color:#F0F3F7;flex:1}
+.std-summary-bar{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding:14px 18px;background:rgba(19,42,68,.9);border-radius:10px;border:1px solid rgba(26,48,73,.8);flex-wrap:wrap}
 .std-summary-bar .ssb-item{display:flex;align-items:center;gap:6px;font-size:12px}
 .std-summary-bar .ssb-dot{width:10px;height:10px;border-radius:50%}
-.std-summary-bar .ssb-label{color:var(--gray)}
+.std-summary-bar .ssb-label{color:var(--gray-light)}
 .std-summary-bar .ssb-val{font-weight:700}
 .std-tab-bar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.std-tab{padding:8px 16px;border-radius:6px;border:1px solid var(--navy5);background:transparent;color:var(--gray-light);cursor:pointer;font-family:inherit;font-size:12px;font-weight:500;transition:all .15s;display:flex;align-items:center;gap:6px}
-.std-tab:hover{border-color:var(--gold);color:var(--gold)}
-.std-tab.active{background:rgba(200,169,81,.1);border-color:var(--gold);color:var(--gold);font-weight:600}
+.std-tab{padding:8px 16px;border-radius:6px;border:1px solid rgba(26,48,73,.8);background:rgba(19,42,68,.6);color:var(--gray-light);cursor:pointer;font-family:inherit;font-size:12px;font-weight:500;transition:all .15s;display:flex;align-items:center;gap:6px}
+.std-tab:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,169,81,.08)}
+.std-tab.active{background:rgba(200,169,81,.15);border-color:var(--gold);color:var(--gold);font-weight:600}
 .std-tab .tab-icon{font-size:14px}
-.std-tab .tab-badge{background:var(--navy5);padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600}
-.std-tab.active .tab-badge{background:rgba(200,169,81,.2)}
+.std-tab .tab-badge{background:rgba(26,48,73,.8);padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600}
+.std-tab.active .tab-badge{background:rgba(200,169,81,.25)}
 
 /* Mobile menu toggle */
 .mobile-header{display:none;position:sticky;top:0;z-index:100;background:var(--navy2);border-bottom:1px solid var(--navy5);padding:12px 16px;align-items:center;justify-content:space-between}
@@ -671,19 +671,19 @@ function renderDashboard(){
   const inProg=ALL_ITEMS.filter(i=>statuses[i.id]==="in_progress");
   let h=`<div class="main-inner" id="dashboard-capture"><div class="dash-header-row"><div><h1 class="page-title">Launch Dashboard</h1><p class="page-sub">Comfort Keepers of Annapolis</p></div><button class="export-btn" id="export-btn" onclick="exportDashboard()">📸 Export as JPG</button></div>`;
   // KPIs
-  const kpis=[{l:"Total Items",v:TOTAL,c:"#8FA3B8",bg:"#132A44"},{l:"Complete",v:stats.complete,c:"#2D9F56",bg:"rgba(45,159,86,.08)"},{l:"In Progress",v:stats.in_progress,c:"#D4870E",bg:"rgba(212,135,14,.08)"},{l:"Blocked",v:stats.blocked,c:"#C53030",bg:"rgba(197,48,48,.08)"},{l:"Not Started",v:stats.not_started,c:"#8B95A5",bg:"rgba(139,149,165,.08)"}];
-  h+=`<div class="kpi-grid">`;kpis.forEach(k=>{h+=`<div class="kpi-card" style="background:${k.bg};border-color:${k.c}22"><div class="kpi-label">${k.l}</div><div class="kpi-value" style="color:${k.c}">${k.v}</div></div>`});h+=`</div>`;
+  const kpis=[{l:"Total Items",v:TOTAL,c:"#8FA3B8",bg:"#132A44"},{l:"Complete",v:stats.complete,c:"#2D9F56",bg:"rgba(45,159,86,.14)"},{l:"In Progress",v:stats.in_progress,c:"#D4870E",bg:"rgba(212,135,14,.14)"},{l:"Blocked",v:stats.blocked,c:"#C53030",bg:"rgba(197,48,48,.14)"},{l:"Not Started",v:stats.not_started,c:"#8B95A5",bg:"rgba(139,149,165,.1)"}];
+  h+=`<div class="kpi-grid">`;kpis.forEach(k=>{h+=`<div class="kpi-card" style="background:${k.bg};border-color:${k.c}44"><div class="kpi-label">${k.l}</div><div class="kpi-value" style="color:${k.c}">${k.v}</div></div>`});h+=`</div>`;
   // Overall bar
   h+=`<div class="overall-box"><div class="overall-header"><div><span class="title">Overall Completion</span><span class="sub">${stats.complete} of ${TOTAL} total · ${pctAct}% of actionable items</span></div><span class="big-pct">${pct}%</span></div><div class="overall-bar"><div class="fill" style="width:${pct}%"></div></div>`;
   h+=`<div class="phase-mini-grid">`;PHASES.forEach(p=>{const ps=getPhaseStats(p);const sn=p.phase.replace(/Phase \d+ — /,"");h+=`<button class="phase-mini" onclick="setPhase('${p.id}')"><div class="pm-label">${p.icon} ${sn}</div><div class="bar-track"><div class="bar-fill" style="width:${ps.pct}%;background:${ps.pct===100?"#2D9F56":ps.blocked>0?"#C53030":"#C8A951"}"></div></div><div class="pm-pct" style="color:${ps.pct===100?"#2D9F56":"#6B7F94"}">${ps.pct}%</div></button>`});
   h+=`</div></div>`;
   // Blocked + In Progress
-  h+=`<div class="two-col"><div class="alert-box" style="background:rgba(197,48,48,.06);border:1px solid rgba(197,48,48,.15)"><h3 style="color:#C53030">🚨 Blocked Items (${blocked.length})</h3>`;
+  h+=`<div class="two-col"><div class="alert-box" style="background:rgba(197,48,48,.14);border:1px solid rgba(197,48,48,.35)"><h3 style="color:#F56565">🚨 Blocked Items (${blocked.length})</h3>`;
   if(!blocked.length)h+=`<p class="empty">No blocked items — great!</p>`;
-  else{h+=`<div class="alert-list">`;blocked.forEach(i=>{h+=`<div class="alert-item" style="background:rgba(197,48,48,.08)"><div class="ai-title" style="color:#F0B0B0">${i.title}</div><div class="ai-sub" style="color:#8B6060">${i.summary.slice(0,120)}…</div></div>`});h+=`</div>`}
-  h+=`</div><div class="alert-box" style="background:rgba(212,135,14,.06);border:1px solid rgba(212,135,14,.15)"><h3 style="color:#D4870E">🔄 In Progress (${inProg.length})</h3>`;
+  else{h+=`<div class="alert-list">`;blocked.forEach(i=>{h+=`<div class="alert-item" style="background:rgba(197,48,48,.18)"><div class="ai-title" style="color:#FEB2B2">${i.title}</div><div class="ai-sub" style="color:#E8A8A8">${i.summary.slice(0,120)}…</div></div>`});h+=`</div>`}
+  h+=`</div><div class="alert-box" style="background:rgba(212,135,14,.14);border:1px solid rgba(212,135,14,.35)"><h3 style="color:#F6AD55">🔄 In Progress (${inProg.length})</h3>`;
   if(!inProg.length)h+=`<p class="empty">Nothing currently in progress.</p>`;
-  else{h+=`<div class="alert-list">`;inProg.forEach(i=>{h+=`<div class="alert-item" style="background:rgba(212,135,14,.08)"><div class="ai-title" style="color:#F0D898">${i.title}</div><div class="ai-sub" style="color:#8B7740">${i.summary.slice(0,120)}…</div></div>`});h+=`</div>`}
+  else{h+=`<div class="alert-list">`;inProg.forEach(i=>{h+=`<div class="alert-item" style="background:rgba(212,135,14,.18)"><div class="ai-title" style="color:#FEEBC8">${i.title}</div><div class="ai-sub" style="color:#E8C888">${i.summary.slice(0,120)}…</div></div>`});h+=`</div>`}
   h+=`</div></div>`;
   // Vendor grid
   const vendors=[
@@ -698,7 +698,7 @@ function renderDashboard(){
   ];
   h+=`<div class="vendor-box"><h3>Platform & Vendor Status</h3><div class="vendor-grid">`;
   vendors.forEach(v=>{const done=v.ids.filter(id=>statuses[id]==="complete").length;const t=v.ids.length;const allDone=done===t;const hasBlk=v.ids.some(id=>statuses[id]==="blocked");
-    h+=`<div class="vendor-card" style="background:${allDone?"rgba(45,159,86,.08)":hasBlk?"rgba(197,48,48,.08)":"#0F2540"};border-color:${allDone?"rgba(45,159,86,.2)":hasBlk?"rgba(197,48,48,.2)":"#1A3049"}"><div class="vc-name" style="color:${allDone?"#2D9F56":"#E8ECF1"}">${v.name}</div><div class="vc-desc">${v.desc}</div><div class="vc-bar"><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${t?Math.round(done/t*100):0}%;background:${allDone?"#2D9F56":"#C8A951"}"></div></div><span class="count">${done}/${t}</span></div></div>`});
+    h+=`<div class="vendor-card" style="background:${allDone?"rgba(45,159,86,.12)":hasBlk?"rgba(197,48,48,.14)":"#0F2540"};border-color:${allDone?"rgba(45,159,86,.3)":hasBlk?"rgba(197,48,48,.35)":"#1A3049"}"><div class="vc-name" style="color:${allDone?"#2D9F56":"#E8ECF1"}">${v.name}</div><div class="vc-desc">${v.desc}</div><div class="vc-bar"><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${t?Math.round(done/t*100):0}%;background:${allDone?"#2D9F56":"#C8A951"}"></div></div><span class="count">${done}/${t}</span></div></div>`});
   h+=`</div></div></div>`;
   document.getElementById("main").innerHTML=h;
 }
