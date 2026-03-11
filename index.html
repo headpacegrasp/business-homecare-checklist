@@ -137,6 +137,33 @@ h1.page-title{font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:
 .export-btn.exporting{opacity:.7;cursor:wait}
 .dash-header-row{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px}
 
+/* Standards Checklist View */
+.std-role-section{margin-bottom:28px}
+.std-role-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--navy5)}
+.std-role-header .role-icon{font-size:24px}
+.std-role-header .role-name{font-size:18px;font-weight:700}
+.std-role-header .role-count{font-size:12px;color:var(--gray);margin-left:auto}
+.std-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-radius:8px;margin-bottom:8px;transition:background .2s;border:1px solid var(--navy5);background:var(--navy4)}
+.std-item.std-complete{background:rgba(45,159,86,.06);border-color:rgba(45,159,86,.15)}
+.std-item.std-na{opacity:.5}
+.std-checkbox{width:22px;height:22px;min-width:22px;border-radius:5px;border:2px solid var(--navy5);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all .2s;margin-top:1px;background:transparent}
+.std-checkbox:hover{border-color:var(--gold)}
+.std-checkbox.checked{background:var(--green-bright);border-color:var(--green-bright);color:#fff}
+.std-text{font-size:12.5px;line-height:1.55;color:var(--text);flex:1}
+.std-text.done{text-decoration:line-through;color:var(--green-bright);opacity:.8}
+.std-summary-bar{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding:14px 18px;background:var(--navy4);border-radius:10px;border:1px solid var(--navy5);flex-wrap:wrap}
+.std-summary-bar .ssb-item{display:flex;align-items:center;gap:6px;font-size:12px}
+.std-summary-bar .ssb-dot{width:10px;height:10px;border-radius:50%}
+.std-summary-bar .ssb-label{color:var(--gray)}
+.std-summary-bar .ssb-val{font-weight:700}
+.std-tab-bar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.std-tab{padding:8px 16px;border-radius:6px;border:1px solid var(--navy5);background:transparent;color:var(--gray-light);cursor:pointer;font-family:inherit;font-size:12px;font-weight:500;transition:all .15s;display:flex;align-items:center;gap:6px}
+.std-tab:hover{border-color:var(--gold);color:var(--gold)}
+.std-tab.active{background:rgba(200,169,81,.1);border-color:var(--gold);color:var(--gold);font-weight:600}
+.std-tab .tab-icon{font-size:14px}
+.std-tab .tab-badge{background:var(--navy5);padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600}
+.std-tab.active .tab-badge{background:rgba(200,169,81,.2)}
+
 /* Mobile menu toggle */
 .mobile-header{display:none;position:sticky;top:0;z-index:100;background:var(--navy2);border-bottom:1px solid var(--navy5);padding:12px 16px;align-items:center;justify-content:space-between}
 .mobile-header .mh-left{display:flex;align-items:center;gap:10px}
@@ -189,6 +216,12 @@ h1.page-title{font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:
   .note-edit input{min-width:0}
   .sub-header{font-size:13px;padding:10px 14px}
   .alert-list{max-height:180px}
+  .std-tab-bar{gap:6px}
+  .std-tab{padding:6px 12px;font-size:11px}
+  .std-item{flex-direction:row;gap:10px;padding:10px 12px}
+  .std-text{font-size:11.5px}
+  .std-summary-bar{padding:10px 14px;gap:10px}
+  .std-role-header .role-name{font-size:15px}
 }
 @media(max-width:400px){
   .kpi-grid{grid-template-columns:1fr 1fr;gap:8px}
@@ -514,8 +547,66 @@ const PHASES = [
 ];
 
 // ═══════════════════════════════════════════════════════════════════════
-// APP STATE & STORAGE
+// CKFI MINIMUM STANDARDS CHECKLIST (3 Roles)
 // ═══════════════════════════════════════════════════════════════════════
+const STANDARDS = [
+{role:"Franchise Owner",icon:"👔",color:"#C8A951",items:[
+{id:"std-o-1",text:"Use a compliant legal entity name (no 'Comfort Keepers/CK/CKFI' in the legal name) and maintain the correct DBA for Annapolis and any other jurisdictions where you serve clients."},
+{id:"std-o-2",text:"Obtain and maintain all Maryland home care licensure needed for your approved core and additional services; track renewals and immediately share any state survey/audit and plan of correction with CKFI."},
+{id:"std-o-3",text:"Keep required business insurance in force at all times (general liability, professional, abuse/molestation, EPLI, cyber, property, employee theft/bond, workers' comp, any state-required or partner-required policies), with CKFI and required partners named as additional insureds."},
+{id:"std-o-4",text:"Maintain your POSH subscription and use its Maryland-specific agreements, policies, and HR/licensing resources when setting up client paperwork and office policies."},
+{id:"std-o-5",text:"Adopt and enforce anti-corruption and anti-fraud policies, including training and monitoring to prevent waste, abuse, and payor non-compliance (for example, for Kaiser or other strategic partners you use in Annapolis)."},
+{id:"std-o-6",text:"Ensure the Annapolis main office is staffed with at least two full-time, fully trained people; any satellite locations must meet the one-person rule while the main Annapolis office keeps two."},
+{id:"std-o-7",text:"Choose and maintain a professional commercial office location within your Annapolis territory, notify CKFI of address changes, and follow rules for any satellite locations."},
+{id:"std-o-8",text:"Install and maintain CKFI-approved exterior and interior signage (including the 'Independently Owned Office' sign) consistent with zoning, lease rules, and current Comfort Keepers brand style."},
+{id:"std-o-9",text:"Provide and maintain the required IT environment: high-speed internet, Windows-based computers, Office/M365, antivirus, backups, MFA, and secure cloud/hosting practices that meet CKFI cybersecurity guidance."},
+{id:"std-o-10",text:"Own HIPAA compliance in your franchise: written privacy policy, HIPAA-compliant email/text, BAAs with vendors, PHI safeguards, timely breach reporting, and retention of client records for at least 7 years (or longer when audits/litigation apply)."},
+{id:"std-o-11",text:"Use CKFI's required operating platform (Viv) as the system of record for clients, caregivers, schedules, and plans of care."},
+{id:"std-o-12",text:"Use only CKFI-approved or properly submitted vendors for technology, marketing, and other key services."},
+{id:"std-o-13",text:"Ensure background checks (and any required OIG checks) are completed and renewed on the schedule CKFI or state law requires for all Annapolis office staff and caregivers."},
+{id:"std-o-14",text:"Ensure you and your general manager complete CKFI initial training and required ongoing/annual training, and that all caregivers complete required onboarding and continuing education."},
+{id:"std-o-15",text:"Personally attend or assign an approved representative to attend required CKFI national, regional, co-op, and PMG meetings each year."},
+{id:"std-o-16",text:"Control all brand, website, advertising, and social media for Comfort Keepers Annapolis so it follows CKFI brand standards, uses approved materials, and meets local and National Brand Fund spending and contribution rules."},
+{id:"std-o-17",text:"Make sure Annapolis offers CKFI-required core services and any approved additional services, and never performs prohibited services or services outside the scope of your Maryland license or any PDN addendum."},
+{id:"std-o-18",text:"Oversee strong processes for care consultations, plans of care, periodic reviews, infection control, and sentinel event management (investigation, insurer/CKFI notification, corrective action)."},
+{id:"std-o-19",text:"Follow CKFI rules for serving clients outside your Annapolis territory, referring to nearby franchisees, and participating in strategic partnerships (including Kaiser if used)."},
+{id:"std-o-20",text:"Meet all CKFI reporting: accurate royalties (hours, gross revenue, deductions), timely submissions, storage/submission of client agreements and plans of care, and truthful reporting of data."},
+{id:"std-o-21",text:"Monitor and meet CKFI minimum performance standards (hours or revenue); if Annapolis falls below, complete required business plans and follow any remedial steps CKFI requires."},
+{id:"std-o-22",text:"Follow CKFI rules for any future territory expansion, zip-code purchases/auctions, and territory swaps involving the Annapolis area."},
+]},
+{role:"General Manager",icon:"📌",color:"#5B9BD5",items:[
+{id:"std-g-1",text:"Maintain proper staffing and supervision in the Annapolis office; ensure you and any office manager have completed CKFI initial training."},
+{id:"std-g-2",text:"Keep Annapolis office contact information current and ensure all owners and office staff operate from @comfortkeepers.com email with MFA; manage creation and deactivation of accounts."},
+{id:"std-g-3",text:"Maintain the IT and cybersecurity posture: apply software updates, keep antivirus and backups running, secure Wi-Fi with strong passwords, enforce MFA, and run regular staff cyber-awareness training and phishing tests."},
+{id:"std-g-4",text:"Enforce the phone standard: live answer during business hours with a proper 'Comfort Keepers' greeting, acceptable use of an answering service/phone tree, and prompt after-hours callbacks within the required time."},
+{id:"std-g-5",text:"Implement HIPAA procedures in everyday work: limit PHI access, use secure communication tools, share privacy notices, and escalate any suspected breaches immediately."},
+{id:"std-g-6",text:"Ensure daily use of the required operating platform (Viv) for scheduling, documentation, billing, and reporting is accurate and complete."},
+{id:"std-g-7",text:"Oversee recruitment and hiring for Annapolis: complete all background checks and verifications before assignment, and repeat checks as required."},
+{id:"std-g-8",text:"Run caregiver onboarding: orientation to Comfort Keepers Annapolis policies, completion of skills/competency checklists, and assignment/completion of required learning modules (HIPAA, safety, infection control, cyber, and others)."},
+{id:"std-g-9",text:"Track and enforce caregiver and office-staff ongoing training requirements, including any Maryland-specific or payer-specific topics."},
+{id:"std-g-10",text:"Review all marketing/advertising/social content used by your office; use CKFI-supplied assets or obtain pre-approval for local pieces; ensure appropriate disclaimers and branding for Annapolis."},
+{id:"std-g-11",text:"Track local advertising spend for your Annapolis territory and document that you meet CKFI's minimum monthly spend requirements."},
+{id:"std-g-12",text:"Ensure that field staff deliver only approved core/additional services and that no one performs prohibited or out-of-license services; spot-check care in the field as needed."},
+{id:"std-g-13",text:"Oversee the full client life cycle in Annapolis: intake, care consultation, written plan of care, caregiver assignment, regular care reviews, and safe discharge."},
+{id:"std-g-14",text:"Lead infection-control implementation: ensure caregivers follow PPE and hygiene rules, and update procedures as guidance changes."},
+{id:"std-g-15",text:"Lead response to sentinel events in your caseload: obtain facts, protect the client, complete internal documentation, notify the owner, CKFI, and insurer when required, and monitor corrective actions."},
+{id:"std-g-16",text:"Manage out-of-territory referrals and cooperation with neighboring franchisees, and operationally support any strategic partnerships (screening, documentation, pricing, and reporting requirements)."},
+{id:"std-g-17",text:"Collect all data required for royalties and CKFI reporting, verify accuracy, and submit on time; ensure client agreements and plans of care are stored and accessible in the required way."},
+{id:"std-g-18",text:"Monitor key KPIs tied to minimum performance standards for Annapolis (hours, revenue, caregiver utilization) and work with the owner on business plans if you fall short."},
+]},
+{role:"Homecare Providers",icon:"💚",color:"#2D9F56",items:[
+{id:"std-h-1",text:"Complete Annapolis-specific onboarding before working independently: office orientation, Comfort Keepers mission and expectations, skills/competency validation, and assigned online courses."},
+{id:"std-h-2",text:"Stay current on all required ongoing and annual training (including HIPAA, safety, infection control, and cybersecurity), plus any Maryland or payer-specific modules you are assigned."},
+{id:"std-h-3",text:"Cooperate with required background checks and any periodic rechecks or health screens; promptly provide any documentation requested by the office."},
+{id:"std-h-4",text:"Provide only those services listed in the client's Plan of Care and within your non-medical caregiver scope; do not perform prohibited or clinical tasks reserved for licensed nurses or other professionals."},
+{id:"std-h-5",text:"Follow infection-control practices in every shift: proper hand hygiene, correct PPE use, and adherence to any special communicable-disease procedures shared by the Annapolis office."},
+{id:"std-h-6",text:"Protect client privacy: keep PHI confidential, avoid using personal or unapproved apps to communicate about clients, and follow all HIPAA guidance from the office."},
+{id:"std-h-7",text:"Report changes in client condition, safety concerns, incidents, accidents, or mistakes to the office promptly so supervision and follow-up can occur."},
+{id:"std-h-8",text:"Follow Comfort Keepers Annapolis policies for professionalism: punctuality, dress, behavior in the home, driving/transport rules, and any social-media expectations for employees."},
+]}
+];
+const ALL_STD_ITEMS = STANDARDS.flatMap(r=>r.items);
+const STD_TOTAL = ALL_STD_ITEMS.length;
 const ALL_ITEMS = PHASES.flatMap(p=>p.sub_phases.flatMap(sp=>sp.items));
 const TOTAL = ALL_ITEMS.length;
 let statuses = {};
@@ -525,6 +616,7 @@ let expandedSubs = {};
 let searchText = "";
 let filterStatus = "all";
 let editingNote = null;
+let stdActiveRole = "all";
 
 async function loadState(){
   try{const s=await window.storage.get("ck-tracker-statuses");if(s)statuses=JSON.parse(s.value)}catch(e){}
@@ -563,7 +655,11 @@ function renderSidebar(){
     const ps=getPhaseStats(p);const shortName=p.phase.replace(/Phase \d+ — /,"");
     h+=`<button class="nav-btn ${activePhase===p.id?"active":""}" onclick="setPhase('${p.id}')"><div class="nav-row"><span class="icon">${p.icon}</span><span class="label">${shortName}</span></div><div class="mini-bar"><div class="bar-track"><div class="bar-fill" style="width:${ps.pct}%;background:${ps.pct===100?"#2D9F56":"#C8A951"}"></div></div><span class="count">${ps.complete}/${ps.total}</span></div></button>`;
   });
-  h+=`</div><div class="sidebar-footer">Target Opening: <span>May 30, 2026</span><br>${TOTAL} total items</div>`;
+  // Standards Checklist nav
+  const stdDone=ALL_STD_ITEMS.filter(i=>statuses[i.id]==="complete").length;const stdPct=STD_TOTAL?Math.round(stdDone/STD_TOTAL*100):0;
+  h+=`<div style="padding:6px 16px 2px;margin-top:8px;border-top:1px solid #1A3049"><span style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#4A6072;font-weight:600">Reference</span></div>`;
+  h+=`<button class="nav-btn ${activePhase==="standards"?"active":""}" onclick="setPhase('standards')"><div class="nav-row"><span class="icon">📜</span><span class="label">CKFI Standards Checklist</span></div><div class="mini-bar"><div class="bar-track"><div class="bar-fill" style="width:${stdPct}%;background:${stdPct===100?"#2D9F56":"#5B9BD5"}"></div></div><span class="count">${stdDone}/${STD_TOTAL}</span></div></button>`;
+  h+=`</div><div class="sidebar-footer">Target Opening: <span>May 30, 2026</span><br>${TOTAL} launch items · ${STD_TOTAL} standards</div>`;
   document.getElementById("sidebar").innerHTML=h;
 }
 
@@ -646,6 +742,56 @@ function renderPhaseView(){
 }
 
 // ═══════════════════════════════════════════════════════════════════════
+// RENDER STANDARDS CHECKLIST
+// ═══════════════════════════════════════════════════════════════════════
+function renderStandards(){
+  const allDone=ALL_STD_ITEMS.filter(i=>statuses[i.id]==="complete").length;
+  const rolesToShow=stdActiveRole==="all"?STANDARDS:STANDARDS.filter(r=>r.role===stdActiveRole);
+
+  let h=`<div class="main-inner"><div class="dash-header-row"><div><h1 class="page-title">📜 CKFI Minimum Standards Checklist</h1><p class="page-sub">Franchise Owner · General Manager · Homecare Providers — CK Annapolis</p></div></div>`;
+
+  // Summary bar
+  h+=`<div class="std-summary-bar">`;
+  STANDARDS.forEach(r=>{
+    const done=r.items.filter(i=>statuses[i.id]==="complete").length;
+    h+=`<div class="ssb-item"><div class="ssb-dot" style="background:${r.color}"></div><span class="ssb-label">${r.role}:</span><span class="ssb-val" style="color:${r.color}">${done}/${r.items.length}</span></div>`;
+  });
+  h+=`<div class="ssb-item" style="margin-left:auto"><span class="ssb-label">Overall:</span><span class="ssb-val" style="color:var(--gold)">${allDone}/${STD_TOTAL}</span></div>`;
+  // Progress bar
+  const pct=STD_TOTAL?Math.round(allDone/STD_TOTAL*100):0;
+  h+=`<div style="width:100%;margin-top:8px"><div class="bar-track" style="height:6px"><div class="bar-fill" style="width:${pct}%;background:linear-gradient(90deg,#5B9BD5,#2D9F56,#C8A951)"></div></div></div>`;
+  h+=`</div>`;
+
+  // Role tabs
+  h+=`<div class="std-tab-bar">`;
+  h+=`<button class="std-tab ${stdActiveRole==="all"?"active":""}" onclick="stdActiveRole='all';render()"><span class="tab-icon">📋</span>All Roles<span class="tab-badge">${STD_TOTAL}</span></button>`;
+  STANDARDS.forEach(r=>{
+    const done=r.items.filter(i=>statuses[i.id]==="complete").length;
+    h+=`<button class="std-tab ${stdActiveRole===r.role?"active":""}" onclick="stdActiveRole='${r.role}';render()"><span class="tab-icon">${r.icon}</span>${r.role}<span class="tab-badge">${done}/${r.items.length}</span></button>`;
+  });
+  h+=`</div>`;
+
+  // Role sections
+  rolesToShow.forEach(r=>{
+    const done=r.items.filter(i=>statuses[i.id]==="complete").length;
+    h+=`<div class="std-role-section"><div class="std-role-header"><span class="role-icon">${r.icon}</span><span class="role-name" style="color:${r.color}">${r.role}</span><span class="role-count">${done} of ${r.items.length} met</span></div>`;
+    r.items.forEach(item=>{
+      const isDone=statuses[item.id]==="complete";
+      h+=`<div class="std-item ${isDone?"std-complete":""}"><div class="std-checkbox ${isDone?"checked":""}" onclick="toggleStd('${item.id}')">${isDone?"✓":""}</div><div class="std-text ${isDone?"done":""}">${item.text}</div></div>`;
+    });
+    h+=`</div>`;
+  });
+
+  h+=`</div>`;
+  document.getElementById("main").innerHTML=h;
+}
+
+function toggleStd(id){
+  statuses[id]=statuses[id]==="complete"?"not_started":"complete";
+  saveState();render();
+}
+
+// ═══════════════════════════════════════════════════════════════════════
 // ACTIONS
 // ═══════════════════════════════════════════════════════════════════════
 function setPhase(id){activePhase=id;searchText="";filterStatus="all";editingNote=null;closeMobileNav();render()}
@@ -701,7 +847,7 @@ function render(){
   renderSidebar();
   const stats=getStats();const pct=TOTAL?Math.round(stats.complete/TOTAL*100):0;
   const mp=document.getElementById("mobile-pct");if(mp)mp.textContent=pct+"%";
-  if(activePhase==="dashboard")renderDashboard();else renderPhaseView();
+  if(activePhase==="dashboard")renderDashboard();else if(activePhase==="standards")renderStandards();else renderPhaseView();
 }
 
 // ═══════════════════════════════════════════════════════════════════════
