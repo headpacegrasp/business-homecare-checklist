@@ -45,7 +45,7 @@ body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;background:var(--n
 
 /* MAIN */
 .main{flex:1;overflow-y:auto;background:var(--navy3)}
-.main-inner{padding:28px 32px;max-width:1200px}
+.main-inner{padding:28px clamp(16px,3vw,40px)}
 
 /* DASHBOARD */
 h1.page-title{font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:4px}
@@ -130,25 +130,91 @@ h1.page-title{font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:
 .note-edit .btn-cancel{padding:5px 10px;background:var(--navy5);border:none;border-radius:4px;font-size:10px;color:var(--gray);cursor:pointer;font-family:inherit}
 .btn-add-note{margin-top:6px;background:none;border:none;padding:0;font-size:10px;color:var(--text-dim);cursor:pointer;text-decoration:underline;font-family:inherit}
 
+/* Export Button */
+.export-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:linear-gradient(135deg,var(--gold),#D4B96A);border:none;border-radius:6px;font-size:12px;font-weight:600;color:var(--navy);cursor:pointer;font-family:inherit;transition:all .2s;box-shadow:0 2px 8px rgba(200,169,81,.25)}
+.export-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(200,169,81,.35)}
+.export-btn:active{transform:translateY(0)}
+.export-btn.exporting{opacity:.7;cursor:wait}
+.dash-header-row{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+
+/* Mobile menu toggle */
+.mobile-header{display:none;position:sticky;top:0;z-index:100;background:var(--navy2);border-bottom:1px solid var(--navy5);padding:12px 16px;align-items:center;justify-content:space-between}
+.mobile-header .mh-left{display:flex;align-items:center;gap:10px}
+.mobile-header .mh-brand{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.5px}
+.mobile-header .mh-sub{font-size:10px;color:var(--gray)}
+.mobile-header .mh-pct{font-size:13px;font-weight:700;color:var(--gold)}
+.hamburger{background:none;border:none;color:var(--text);font-size:22px;cursor:pointer;padding:4px 8px;border-radius:4px}
+.hamburger:hover{background:rgba(200,169,81,.1)}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:199}
+
+@media(min-width:1400px){
+  .kpi-grid{grid-template-columns:repeat(5,1fr)}
+  .vendor-grid{grid-template-columns:repeat(4,1fr)}
+  .phase-mini-grid{grid-template-columns:repeat(8,1fr)}
+}
+@media(max-width:1100px){
+  .vendor-grid{grid-template-columns:repeat(3,1fr)}
+  .phase-mini-grid{grid-template-columns:repeat(4,1fr)}
+}
 @media(max-width:900px){
-  .sidebar{width:200px;min-width:200px}
+  .sidebar{width:220px;min-width:220px}
   .kpi-grid{grid-template-columns:repeat(3,1fr)}
   .vendor-grid{grid-template-columns:repeat(2,1fr)}
   .phase-mini-grid{grid-template-columns:repeat(4,1fr)}
   .two-col{grid-template-columns:1fr}
+  .overall-header{flex-direction:column;gap:6px}
 }
-@media(max-width:700px){
-  body{flex-direction:column}
-  .sidebar{width:100%;min-width:100%;max-height:50vh}
-  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+@media(max-width:768px){
+  body{flex-direction:column;overflow:auto}
+  .mobile-header{display:flex}
+  .sidebar{position:fixed;left:-280px;top:0;bottom:0;width:270px;min-width:270px;z-index:200;transition:left .3s ease;box-shadow:none}
+  .sidebar.open{left:0;box-shadow:4px 0 24px rgba(0,0,0,.5)}
+  .sidebar-overlay.open{display:block}
+  .main{flex:1;overflow-y:auto;min-height:0}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .kpi-card .kpi-value{font-size:24px}
+  .vendor-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .phase-mini-grid{grid-template-columns:repeat(4,1fr);gap:6px}
+  .two-col{grid-template-columns:1fr;gap:12px}
+  .overall-header{flex-direction:column;gap:4px}
+  .overall-header .sub{margin-left:0}
+  h1.page-title{font-size:20px}
+  .item-row{flex-direction:column;gap:8px}
+  .status-select{min-width:130px;width:130px}
+  .item-meta{flex-wrap:wrap;gap:8px}
+  .phase-controls{flex-direction:column}
+  .phase-controls input{width:100%}
+  .phase-controls select{width:100%}
+  .note-edit{flex-wrap:wrap}
+  .note-edit input{min-width:0}
+  .sub-header{font-size:13px;padding:10px 14px}
+  .alert-list{max-height:180px}
+}
+@media(max-width:400px){
+  .kpi-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .kpi-card{padding:12px 14px}
+  .kpi-card .kpi-value{font-size:20px}
+  .vendor-grid{grid-template-columns:1fr;gap:8px}
+  .phase-mini-grid{grid-template-columns:repeat(2,1fr)}
+  .overall-box{padding:14px 16px}
+  .main-inner{padding:16px 12px}
 }
 </style>
 </head>
 <body>
 
+<div class="mobile-header" id="mobile-header">
+  <div class="mh-left">
+    <button class="hamburger" onclick="toggleMobileNav()">☰</button>
+    <div><div class="mh-brand">CK ANNAPOLIS</div><div class="mh-sub">Launch Tracker</div></div>
+  </div>
+  <div class="mh-pct" id="mobile-pct">0%</div>
+</div>
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleMobileNav()"></div>
 <nav class="sidebar" id="sidebar"></nav>
 <main class="main" id="main"></main>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
 // ═══════════════════════════════════════════════════════════════════════
 // DATA — COMPREHENSIVE FRANCHISE LAUNCH TRACKER
@@ -509,7 +575,7 @@ function renderDashboard(){
   const actionable=TOTAL-stats.na;const pctAct=actionable?Math.round(stats.complete/actionable*100):0;
   const blocked=ALL_ITEMS.filter(i=>statuses[i.id]==="blocked");
   const inProg=ALL_ITEMS.filter(i=>statuses[i.id]==="in_progress");
-  let h=`<div class="main-inner"><h1 class="page-title">Launch Dashboard</h1><p class="page-sub">Comfort Keepers of Annapolis</p>`;
+  let h=`<div class="main-inner" id="dashboard-capture"><div class="dash-header-row"><div><h1 class="page-title">Launch Dashboard</h1><p class="page-sub">Comfort Keepers of Annapolis</p></div><button class="export-btn" id="export-btn" onclick="exportDashboard()">📸 Export as JPG</button></div>`;
   // KPIs
   const kpis=[{l:"Total Items",v:TOTAL,c:"#8FA3B8",bg:"#132A44"},{l:"Complete",v:stats.complete,c:"#2D9F56",bg:"rgba(45,159,86,.08)"},{l:"In Progress",v:stats.in_progress,c:"#D4870E",bg:"rgba(212,135,14,.08)"},{l:"Blocked",v:stats.blocked,c:"#C53030",bg:"rgba(197,48,48,.08)"},{l:"Not Started",v:stats.not_started,c:"#8B95A5",bg:"rgba(139,149,165,.08)"}];
   h+=`<div class="kpi-grid">`;kpis.forEach(k=>{h+=`<div class="kpi-card" style="background:${k.bg};border-color:${k.c}22"><div class="kpi-label">${k.l}</div><div class="kpi-value" style="color:${k.c}">${k.v}</div></div>`});h+=`</div>`;
@@ -582,13 +648,61 @@ function renderPhaseView(){
 // ═══════════════════════════════════════════════════════════════════════
 // ACTIONS
 // ═══════════════════════════════════════════════════════════════════════
-function setPhase(id){activePhase=id;searchText="";filterStatus="all";editingNote=null;render()}
+function setPhase(id){activePhase=id;searchText="";filterStatus="all";editingNote=null;closeMobileNav();render()}
 function toggleSub(key){expandedSubs[key]=expandedSubs[key]===false?true:false;render()}
 function setItemStatus(id,val){statuses[id]=val;saveState();render()}
 function startEditNote(id){editingNote=id;render()}
 function saveNote(id){const inp=document.getElementById("note-input-"+id);if(inp)notes[id]=inp.value;editingNote=null;saveState();render()}
 
-function render(){renderSidebar();if(activePhase==="dashboard")renderDashboard();else renderPhaseView()}
+function toggleMobileNav(){
+  document.getElementById("sidebar").classList.toggle("open");
+  document.getElementById("sidebar-overlay").classList.toggle("open");
+}
+function closeMobileNav(){
+  document.getElementById("sidebar").classList.remove("open");
+  document.getElementById("sidebar-overlay").classList.remove("open");
+}
+
+async function exportDashboard(){
+  const btn=document.getElementById("export-btn");
+  if(!btn)return;
+  const origText=btn.innerHTML;
+  btn.innerHTML="⏳ Capturing…";btn.classList.add("exporting");
+  try{
+    const el=document.getElementById("dashboard-capture");
+    // hide the export button during capture
+    btn.style.display="none";
+    const canvas=await html2canvas(el,{
+      backgroundColor:"#0F1F33",
+      scale:2,
+      useCORS:true,
+      logging:false,
+      windowWidth:el.scrollWidth,
+      windowHeight:el.scrollHeight
+    });
+    btn.style.display="";
+    // convert to jpg blob and trigger download
+    canvas.toBlob(function(blob){
+      const url=URL.createObjectURL(blob);
+      const a=document.createElement("a");
+      const date=new Date().toISOString().slice(0,10);
+      a.href=url;a.download="CK_Annapolis_Dashboard_"+date+".jpg";
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    },"image/jpeg",0.95);
+  }catch(e){
+    console.error("Export failed:",e);
+    alert("Export failed. Please try again.");
+  }
+  btn.innerHTML=origText;btn.classList.remove("exporting");
+}
+
+function render(){
+  renderSidebar();
+  const stats=getStats();const pct=TOTAL?Math.round(stats.complete/TOTAL*100):0;
+  const mp=document.getElementById("mobile-pct");if(mp)mp.textContent=pct+"%";
+  if(activePhase==="dashboard")renderDashboard();else renderPhaseView();
+}
 
 // ═══════════════════════════════════════════════════════════════════════
 // INIT
